@@ -54,14 +54,6 @@
 #include "./app/connect_state.h"
 #include "./app/app.h"
 
-static void usb_connection(bool connected) {
-    if (connected) {
-        LED_READY_SetHigh();
-    } else {
-        LED_READY_SetLow();
-    }
-}
-
 /*
    Main application
  */
