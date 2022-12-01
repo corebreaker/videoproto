@@ -17,14 +17,14 @@ typedef struct {
 } t_flasher_cmd_header;
 
 bool flasher_cmd_header(t_endpoint_data *data) {
-    char buffer[64];
+    char buffer[128];
     t_flasher_cmd_header *header = (t_flasher_cmd_header *)&data->buffer[0];
     t_flasher_record_desc *d1 = (t_flasher_record_desc *)&header->addresses[0];
     t_flasher_record_desc *d2 = d1 + 1;
 
     buffer[0] = (uint8_t)snprintf(
-            buffer,
-            sizeof(buffer),
+            buffer + 1,
+            sizeof(buffer) - 1,
             "DEST:%02x, SIZE: %u, COUNT:%u; 1.ADDR=%06lu/SZ=%lu; 2.ADDR=%06lu/SZ=%lu",
             header->dest,
             data->len,
@@ -35,8 +35,8 @@ bool flasher_cmd_header(t_endpoint_data *data) {
             (uint32_t)d2->size
         );
 
-    data->len = (uint16_t)buffer[0];
-    memmove(&data->buffer[0], buffer, buffer[0] + 1);
+    data->len = (uint16_t)buffer[0] + 1;
+    memmove(&data->buffer[0], buffer, data->len);
 
     return true;
 }

@@ -216,7 +216,7 @@ please contact mla_licensing@microchip.com
 
 /** ENDPOINTS ALLOCATION *******************************************/
 /* Generic */
-#define USBGEN_EP_SIZE          64
+#define USBGEN_EP_SIZE         128
 #define USBGEN_EP_NUM            1
 
 /** DEFINITIONS ****************************************************/

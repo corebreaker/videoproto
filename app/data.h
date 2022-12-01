@@ -8,7 +8,7 @@
 #ifndef DATA_H
 #define	DATA_H
 
-#define BUFFER_SIZE 64
+#define BUFFER_SIZE 128
 
 typedef struct {
     uint8_t buffer[BUFFER_SIZE];

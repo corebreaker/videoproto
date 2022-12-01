@@ -19,7 +19,9 @@ static uint16_t get_len(t_endpoint_data *data) {
 }
 
 static void read(uint8_t ep, t_endpoint_data *data) {
-    data->handle = USBRxOnePacket(ep, &data->buffer[0], sizeof(data->buffer));
+    uint16_t size = sizeof(data->buffer);
+
+    data->handle = USBRxOnePacket(ep, &data->buffer[0], size);
     data->to_send = false;
 }
 
