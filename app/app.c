@@ -1,94 +1,123 @@
 #include <xc.h>
-#include "../mcc_generated_files/usb/usb.h"
-#include "../mcc_generated_files/pin_manager.h"
-#include "../delay.h"
-#include "./flasher.h"
+#include <stdio.h>
+
+#include "./flasher/flasher.h"
+#include "./result.h"
 #include "./app.h"
+#include "./leds.h"
+#include "./connect_state.h"
+#include "./app_data.h"
+#include "../delay.h"
 
-#define FLASHER_EP 1
+static uint8_t bb[64];
 
-static t_endpoint_data flasher;
-static bool usb_connected = false;
-
-static uint16_t get_len(t_endpoint_data *data) {
-    data->len = sizeof(data->buffer);
-    if (data->len > USBHandleGetLength(data->handle))
-        data->len = USBHandleGetLength(data->handle);
-
-    return data->len;
-}
-
-static void read(uint8_t ep, t_endpoint_data *data) {
+// IO functions
+static void read(t_ep_data *data) {
     uint16_t size = sizeof(data->buffer);
 
-    data->handle = USBRxOnePacket(ep, &data->buffer[0], size);
-    data->to_send = false;
+    data->handle = USBRxOnePacket(data->ep, &/*data->buffer*/bb[0], size);
 }
 
-static void write(uint8_t ep, t_endpoint_data *data) {
-    if (!data) {
-        read(ep, data);
-        return;
-    }
-
-    data->handle = USBTxOnePacket(ep, &data->buffer[0], data->len);
-    data->to_send = true;
+static void write(t_ep_data *data) {
+    data->handle = USBTxOnePacket(data->ep, &/*data->buffer*/bb[0], data->size);
 }
 
-static void manage_endpoint_flasher() {
-    if (flasher.to_send) {
-        read(FLASHER_EP, &flasher);
-        return;
-    }
-
-    if (get_len(&flasher)) {
-        switch (flasher.buffer[0]) {
-            case 0x01:
-            {
-                t_endpoint_data *data = NULL;
-                
-                if (flasher_cmd_header(&flasher)) {
-                    data = &flasher;
-                }
-
-                write(FLASHER_EP, data);
-                return;
-            }
-
-            case 0x02:
-            {
-                t_endpoint_data *data = NULL;
-                
-                if (flasher_cmd_record(&flasher)) {
-                    data = &flasher;
-                }
-
-                write(FLASHER_EP, data);
-                return;
-            }
-        }
-    }
+// Helper functions
+static bool do_task(t_ep_data *data) {
+    return CALLBACKS(data->callbacks)[data->cmd - 1](data);
 }
 
-void usb_connection(bool connected) {
-    usb_connected = connected;
-    if (connected) {
-        LED_READY_SetHigh();
+static uint16_t get_len(t_ep_data *data) {
+    data->size = sizeof(data->buffer);
+    if (data->size > USBHandleGetLength(data->handle))
+        data->size = USBHandleGetLength(data->handle);
+
+    return data->size;
+}
+
+static void do_handshake(t_ep_data *data) {
+    if (do_task(data)) {
+        write(data);
+        data->to_send = true;
     } else {
-        LED_READY_SetLow();
-    }    
+        read(data);
+    }
 }
 
+static void manage_endpoint(t_ep_data *data) {
+    if (USBHandleBusy(data->handle))
+        return;
+
+    if (data->to_send) {
+        if (data->state && !do_task(data)) {
+            write(data);
+
+            return;
+        }
+
+        data->size = 0;
+        data->cmd = 0;
+        data->state = 0;
+        data->to_send = false;
+        memset(&/*data->buffer*/bb[0], 0, sizeof(data->buffer));
+
+        read(data);
+
+        return;
+    }
+    
+    if (get_len(data)) {
+        if (data->state) {
+            do_handshake(data);
+
+            return;
+        }
+
+        uint8_t code = /*data->buffer*/bb[0];
+
+        if (!code) {
+            led_signal_activate(LED_SIGNAL_ERROR, 2000);
+            read(data);
+
+            return;
+        }
+
+        led_signal_activate(LED_SIGNAL_PROG, 5000);
+
+        uint8_t cmd = code - 1;
+
+        if (cmd >= data->callback_count) {
+            t_result_message *res = (t_result_message *)&/*data->buffer*/bb[0];
+
+            res->type = ERR_BAD_COMMAND;
+            res->size = (uint8_t)snprintf(&res->message[0], RESULT_BUF_SZ, "Bad command: %u", (unsigned)code);
+            data->size = result_message_get_buffer_size(res);
+
+            data->to_send = true;
+            write(data);
+            return;
+        }
+
+        data->cmd = code;
+        do_handshake(data);
+    }
+}
+
+// App functions
 void init_app(void) {
     USBEnableEndpoint(FLASHER_EP, USB_IN_ENABLED|USB_OUT_ENABLED|USB_HANDSHAKE_ENABLED|USB_DISALLOW_SETUP);
+    read(&flasher);
+}
 
-    read(FLASHER_EP, &flasher);
+static void do_app(t_ep_data *data) {
+    if (!USBHandleBusy(data->handle)) {
+        memset(&/*data->buffer*/bb, 0, sizeof(data->buffer));
+        manage_endpoint(data);
+    }
 }
 
 void app_loop(void) {
-    if (!usb_connected) return;
-    
-    if (!USBHandleBusy(flasher.handle)) {
-        manage_endpoint_flasher();
-    }
+    if (!is_connected()) return;
+
+    do_app(&flasher);
 }

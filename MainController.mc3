@@ -1,4 +1,4 @@
-<config configName="default" projectName="MainController" configVersion="1.1" device="PIC24FJ256GB106" deviceLibraryClass="com.microchip.mcc.mcu16.Mcu16PeripheralLibrary" coreVersion="5.4.11">
+<config configName="default" projectName="MainController" configVersion="1.1" device="PIC24FJ256GB106" deviceLibraryClass="com.microchip.mcc.mcu16.Mcu16PeripheralLibrary" coreVersion="5.4.14">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -39,6 +39,10 @@
       </entry>
       <entry>
          <string>TMR2</string>
+         <string>class com.microchip.mcc.mcu16.modules.tmr.TMR</string>
+      </entry>
+      <entry>
+         <string>TMR3</string>
          <string>class com.microchip.mcc.mcu16.modules.tmr.TMR</string>
       </entry>
       <entry>
@@ -8441,11 +8445,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR2" name="actualPeriod"/>
-         <value>0.5</value>
+         <value>0.1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR2" name="callBackRate"/>
-         <value>0.5</value>
+         <value>0.1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR2" name="clockSourceSelect"/>
@@ -8457,11 +8461,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR2" name="customPR"/>
-         <value>31249</value>
+         <value>6249</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR2" name="inputMode"/>
-         <value>periodMode</value>
+         <value>customTmrMode</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR2" name="localClockFreq"/>
@@ -8485,7 +8489,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR2" name="requestedPeriod"/>
-         <value>0.5</value>
+         <value>0.1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR2" name="tickerFactor"/>
@@ -8561,7 +8565,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR2" registerAlias="PR"/>
-         <value>31249</value>
+         <value>6249</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR2" registerAlias="PR32"/>
@@ -8581,7 +8585,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR2" registerAlias="PR" settingAlias="PR"/>
-         <value>31249</value>
+         <value>6249</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR2" registerAlias="PR32" settingAlias="PR32"/>
@@ -8650,6 +8654,186 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR2" registerAlias="TNI" settingAlias="priority"/>
          <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR3" name="T3CK"/>
+         <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR3" name="TMR3_TIISRFunction"/>
+         <value>ISR_TMR3_TI</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR3" name="TimerFrequency"/>
+         <value>16000000</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR3" name="actualPeriod"/>
+         <value>0.0001</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR3" name="callBackRate"/>
+         <value>0.0001</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR3" name="clockSourceSelect"/>
+         <value>FOSC/2</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR3" name="combinedTimer"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR3" name="customPR"/>
+         <value>1599</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR3" name="inputMode"/>
+         <value>periodMode</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR3" name="localClockFreq"/>
+         <value>16000000</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR3" name="maxPeriod"/>
+         <value>0.004096</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR3" name="minPeriod"/>
+         <value>0.000000125</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR3" name="prescaleDivisor"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR3" name="prescaledFreq"/>
+         <value>16000000.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR3" name="requestedPeriod"/>
+         <value>0.0001</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR3" name="tickerFactor"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR3" name="timerBitMode"/>
+         <value>16 Bit</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR3" name="timerExtPinSelection"/>
+         <value>FALSE</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TMR3" name="timerMaxCount"/>
+         <value>65535</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR3" registerAlias="TCON" settingAlias="TCKPS" alias="1:1"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR3" registerAlias="TCON" settingAlias="TCKPS" alias="1:256"/>
+         <value>3</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR3" registerAlias="TCON" settingAlias="TCKPS" alias="1:64"/>
+         <value>2</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR3" registerAlias="TCON" settingAlias="TCKPS" alias="1:8"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR3" registerAlias="TCON" settingAlias="TCS" alias="FOSC/2"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR3" registerAlias="TCON" settingAlias="TCS" alias="T3CK"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR3" registerAlias="TCON" settingAlias="TGATE" alias="disabled"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR3" registerAlias="TCON" settingAlias="TGATE" alias="enabled"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR3" registerAlias="TCON" settingAlias="TON" alias="disabled"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR3" registerAlias="TCON" settingAlias="TON" alias="enabled"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR3" registerAlias="TCON" settingAlias="TSIDL" alias="disabled"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="TMR3" registerAlias="TCON" settingAlias="TSIDL" alias="enabled"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR3" registerAlias="PR"/>
+         <value>1599</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR3" registerAlias="TCON"/>
+         <value>32768</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="TMR3" registerAlias="TMR"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR3" registerAlias="PR" settingAlias="PR"/>
+         <value>1599</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR3" registerAlias="TCON" settingAlias="TCKPS"/>
+         <value>1:1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR3" registerAlias="TCON" settingAlias="TCS"/>
+         <value>FOSC/2</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR3" registerAlias="TCON" settingAlias="TGATE"/>
+         <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR3" registerAlias="TCON" settingAlias="TON"/>
+         <value>enabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR3" registerAlias="TCON" settingAlias="TSIDL"/>
+         <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR3" registerAlias="TI" settingAlias="context"/>
+         <value>OFF</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR3" registerAlias="TI" settingAlias="enable"/>
+         <value>enabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR3" registerAlias="TI" settingAlias="flag"/>
+         <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR3" registerAlias="TI" settingAlias="priority"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="TMR3" registerAlias="TMR" settingAlias="TMR"/>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="USB" name="AutoAttach"/>
@@ -11123,19 +11307,19 @@
       </entry>
       <entry>
          <file>mcc_generated_files\system.c</file>
-         <hash>3ee04c9366d96efe56682c7ad2f91474ea3afb586c27bd7e444a94ca4fe35509</hash>
+         <hash>640c988725db7644dbed3556e2e16f87cac97ffde0031efccf89948bc0a444b8</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\clock.h</file>
          <hash>ab5c9d16e43b7af1ee2a82864e3f86eeb82a00722ab21c3ee1f283bbc4a79804</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\usb\usb_hal_pic24f.h</file>
-         <hash>af440594bf6833f4d37fd6169c8f94938b9914e95bd8be47c62d58e13b5d5202</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\mcc.c</file>
          <hash>2adabae2f05a02e9761350127feb126a3a4a959947838b776ee4fbd07add2de5</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\usb\usb_hal_pic24f.h</file>
+         <hash>af440594bf6833f4d37fd6169c8f94938b9914e95bd8be47c62d58e13b5d5202</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\usb\usb_descriptors.c</file>
@@ -11143,7 +11327,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\mcc.h</file>
-         <hash>7ca0b29e261ee86db308a04b48d234a7fbb379deafaf8bd6f402f0b65ce2be6d</hash>
+         <hash>41a2e8161c60fe0fa9f8ead89c37e6a401b602499b66e59f24f7a1675bc24813</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\usb\usb.h</file>
@@ -11154,20 +11338,28 @@
          <hash>93cf575124be7d02266c9558aba204f54825668f08ba981843fb1518f745d231</hash>
       </entry>
       <entry>
-         <file>main.c</file>
-         <hash>494699d3d179b329238a80b2830e17d164a6ea6cd612080bf944afa60e352757</hash>
+         <file>mcc_generated_files\tmr3.h</file>
+         <hash>50ebfb458364645c3fa5f9adcd10a1b784356fa01ba11d753cc9237847c9234a</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\usb\usb_device.c</file>
-         <hash>386906dcfa271ae2d841b1610df4299ecb586ef8485f04273a6c649c11a5449b</hash>
+         <file>main.c</file>
+         <hash>494699d3d179b329238a80b2830e17d164a6ea6cd612080bf944afa60e352757</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\tmr2.h</file>
          <hash>7d851b24fc975135d23cd5aeb5b9a2d2022655ed11c76e842462593a5ec4c368</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files\usb\usb_device.c</file>
+         <hash>386906dcfa271ae2d841b1610df4299ecb586ef8485f04273a6c649c11a5449b</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files\pin_manager.h</file>
          <hash>11fe289c74c9011aa1628b2b123c7115702acfe12cc7752d8ae6ef546472bc79</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\tmr2.c</file>
+         <hash>ad2c5e62acd0bc1f42e89ae52158350ab8264534e48caddb52b55a51d9045d38</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\usb\usb_device.h</file>
@@ -11182,12 +11374,12 @@
          <hash>f88885a57728444faa44fb05f84d968d014bda5121211f2692029ab2ce3410a2</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\tmr2.c</file>
-         <hash>9b409065eed3b06e0f63b0e9a3dc71bc4d7fece0a1475bcf5043d2e090097179</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\usb\usb_hal.h</file>
          <hash>4e4ccc67c8e238ad1033ff8b9d04be5e9f00ba01ee536ac25d203cba119fe24b</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\tmr3.c</file>
+         <hash>063dbfc17e0c169931d499f6c1e1cb6515cbe460245b21c7948e18ac1708a3e1</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.c</file>
@@ -11195,7 +11387,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\usb\utilities\mchpwinusb_template.inf</file>
-         <hash>f39ec335061a7982ee04ffd21c59f76872ccd57b2a6608a58d19079bc84ee2f5</hash>
+         <hash>3150515432f47c8120083486c5e4a0e81691e21da527f730a96161c1bdbebe25</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\usb\usb_hal_16bit.c</file>
@@ -11206,16 +11398,16 @@
          <hash>1f3fdf3b0df5bcd1c8156f02cc5be582abb129a39fee8f38f3b6042a7d46b2fb</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\usb\usb_device_generic.c</file>
-         <hash>bc5c97aed883b483132affd85810a0ed5bca7eff4257fd6c2450d3bf95833a9c</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\traps.h</file>
          <hash>7cbb07af0e018b56d3cedc1b8426db335754e4e943cce1d81aeec74e698436d2</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files\usb\usb_device_generic.c</file>
+         <hash>bc5c97aed883b483132affd85810a0ed5bca7eff4257fd6c2450d3bf95833a9c</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files\interrupt_manager.c</file>
-         <hash>29ff94cd27994dcb1489b34fd824c1b73603c82b391af2a72f3c2a19e1ceb3f2</hash>
+         <hash>f5452692c445660871bc3dc3cbcb7159ed0902b7430cef64f928f6a1be0c7c46</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\usb\usb_common.h</file>
