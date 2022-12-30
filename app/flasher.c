@@ -16,16 +16,18 @@ typedef struct {
     t_flasher_record_desc addresses[1];
 } t_flasher_cmd_header;
 
+static char buffer[127];
+static uint16_t buf_size;
+
 bool flasher_cmd_header(t_endpoint_data *data) {
-    char buffer[128];
     t_flasher_cmd_header *header = (t_flasher_cmd_header *)&data->buffer[0];
     t_flasher_record_desc *d1 = (t_flasher_record_desc *)&header->addresses[0];
     t_flasher_record_desc *d2 = d1 + 1;
 
-    buffer[0] = (uint8_t)snprintf(
-            buffer + 1,
-            sizeof(buffer) - 1,
-            "DEST:%02x, SIZE: %u, COUNT:%u; 1.ADDR=%06lu/SZ=%lu; 2.ADDR=%06lu/SZ=%lu",
+    buf_size = (uint16_t)snprintf(
+            buffer,
+            sizeof(buffer),
+            "DEST:%02x, SIZE: %u, COUNT:%u; 1.ADDR=%06lx/SZ=%lx; 2.ADDR=%06lx/SZ=%lx",
             header->dest,
             data->len,
             header->count,
@@ -35,12 +37,26 @@ bool flasher_cmd_header(t_endpoint_data *data) {
             (uint32_t)d2->size
         );
 
-    data->len = (uint16_t)buffer[0] + 1;
-    memmove(&data->buffer[0], buffer, data->len);
+    data->len = (buf_size < 64) ? (buf_size + 1) : 64;
+
+    data->buffer[0] = (uint8_t)(data->len - 1);
+    memmove(&data->buffer[1], buffer, data->len - 1);
 
     return true;
 }
 
 bool flasher_cmd_record(t_endpoint_data *data) {
+    data->len = 1;
+    if (buf_size > 63) {
+        uint16_t size = buf_size - 63;
+
+        data->buffer[0] = (uint8_t)size;
+
+        data->len = size + 1;
+        memmove(&data->buffer[1], &buffer[63], size);
+    }
+
+    data->buffer[0] = (uint8_t)(data->len - 1);
+
     return true;
 }

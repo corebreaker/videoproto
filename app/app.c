@@ -46,7 +46,7 @@ static void manage_endpoint_flasher() {
             case 0x01:
             {
                 t_endpoint_data *data = NULL;
-                
+
                 if (flasher_cmd_header(&flasher)) {
                     data = &flasher;
                 }

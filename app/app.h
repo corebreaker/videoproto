@@ -11,7 +11,7 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
-    
+
 void usb_connection(bool connected);
 
 void init_app(void);
