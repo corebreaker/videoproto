@@ -50,8 +50,6 @@ please contact mla_licensing@microchip.com
  * Note:            None
  *******************************************************************/
 bool USER_USB_CALLBACK_EVENT_HANDLER(USB_EVENT event, void *pdata, uint16_t size) {
-    connection_signal_idle();
-
     switch( (int) event ) {
         case EVENT_TRANSFER:
             break;
@@ -66,7 +64,7 @@ bool USER_USB_CALLBACK_EVENT_HANDLER(USB_EVENT event, void *pdata, uint16_t size
             //would normally be done in USB compliant bus powered applications, although
             //no further processing is needed for purely self powered applications that
             //don't consume power from the host.
-            connection_signal_suspend();
+            connection_signal_usb_event();
             break;
 
         case EVENT_RESUME:
@@ -86,6 +84,7 @@ bool USER_USB_CALLBACK_EVENT_HANDLER(USB_EVENT event, void *pdata, uint16_t size
         case EVENT_EP0_REQUEST:
             /* We have received a non-standard USB request.  The vendor driver
              * needs to check to see if the request was for it. */
+            connection_signal_usb_start();
             USBCheckVendorRequest();
             break;
 

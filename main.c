@@ -55,6 +55,11 @@
 #include "./app/leds.h"
 #include "./app/app.h"
 
+// USB connection monitoring
+static void usb_connection(bool connected) {
+    led_ready(connected);
+}
+
 /*
    Main application
  */
@@ -62,7 +67,7 @@ int main(void) {
     // initialize the device
     SYSTEM_Initialize();
     INTERRUPT_GlobalEnable();
-    
+
     led_error(true);
 
     TMR2_SetInterruptHandler(connection_signal_timer);
@@ -73,10 +78,9 @@ int main(void) {
     led_error(false);
 
     while (1) {
-        call_connect_state_handler();
         app_loop();
     }
-    
+
     return 1;
 }
 /**

@@ -2,13 +2,13 @@
 #include "../mcc_generated_files/usb/usb.h"
 #include "../mcc_generated_files/pin_manager.h"
 #include "../delay.h"
+#include "./connect_state.h"
 #include "./flasher.h"
 #include "./app.h"
 
 #define FLASHER_EP 1
 
 static t_endpoint_data flasher;
-static bool usb_connected = false;
 
 static uint16_t get_len(t_endpoint_data *data) {
     data->len = sizeof(data->buffer);
@@ -70,15 +70,6 @@ static void manage_endpoint_flasher() {
     }
 }
 
-void usb_connection(bool connected) {
-    usb_connected = connected;
-    if (connected) {
-        LED_READY_SetHigh();
-    } else {
-        LED_READY_SetLow();
-    }    
-}
-
 void init_app(void) {
     USBEnableEndpoint(FLASHER_EP, USB_IN_ENABLED|USB_OUT_ENABLED|USB_HANDSHAKE_ENABLED|USB_DISALLOW_SETUP);
 
@@ -86,7 +77,7 @@ void init_app(void) {
 }
 
 void app_loop(void) {
-    if (!usb_connected) return;
+    if (!is_connected()) return;
     
     if (!USBHandleBusy(flasher.handle)) {
         manage_endpoint_flasher();
