@@ -6,15 +6,20 @@
                    projectFiles="true">
       <logicalFolder name="f1" displayName="Application" projectFiles="true">
         <logicalFolder name="f2" displayName="Flasher" projectFiles="true">
-          <itemPath>app/flasher.h</itemPath>
+          <itemPath>app/flasher/flasher.h</itemPath>
+          <itemPath>app/flasher/flasher_data.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f1" displayName="Programmer" projectFiles="true">
+          <itemPath>app/programmer/bus.h</itemPath>
+          <itemPath>app/programmer/programmer.h</itemPath>
+          <itemPath>app/programmer/prog_data.h</itemPath>
         </logicalFolder>
         <itemPath>app/app.h</itemPath>
         <itemPath>app/connect_state.h</itemPath>
-        <itemPath>app/result.h</itemPath>
         <itemPath>app/app_data.h</itemPath>
-        <itemPath>app/prog_data.h</itemPath>
+        <itemPath>app/result.h</itemPath>
+        <itemPath>app/leds.h</itemPath>
+        <itemPath>app/flasher.h</itemPath>
       </logicalFolder>
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
@@ -50,14 +55,18 @@
                    projectFiles="true">
       <logicalFolder name="f1" displayName="Application" projectFiles="true">
         <logicalFolder name="f2" displayName="Flasher" projectFiles="true">
-          <itemPath>app/flasher.c</itemPath>
+          <itemPath>app/flasher/flasher.c</itemPath>
         </logicalFolder>
         <logicalFolder name="f1" displayName="Programmer" projectFiles="true">
+          <itemPath>app/programmer/bus.c</itemPath>
+          <itemPath>app/programmer/programmer.c</itemPath>
         </logicalFolder>
         <itemPath>app/app.c</itemPath>
         <itemPath>app/connect_state.c</itemPath>
-        <itemPath>app/app_data.c</itemPath>
         <itemPath>app/result.c</itemPath>
+        <itemPath>app/app_data.c</itemPath>
+        <itemPath>app/leds.c</itemPath>
+        <itemPath>app/flasher.c</itemPath>
       </logicalFolder>
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"

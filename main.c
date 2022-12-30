@@ -46,12 +46,13 @@
   Section: Included Files
 */
 #include "./mcc_generated_files/system.h"
-#include "./mcc_generated_files/pin_manager.h"
 #include "./mcc_generated_files/interrupt_manager.h"
 #include "./mcc_generated_files/tmr2.h"
+#include "./mcc_generated_files/tmr3.h"
 
 #include "./delay.h"
 #include "./app/connect_state.h"
+#include "./app/leds.h"
 #include "./app/app.h"
 
 /*
@@ -62,13 +63,14 @@ int main(void) {
     SYSTEM_Initialize();
     INTERRUPT_GlobalEnable();
     
-    LED_ERROR_SetHigh();
+    led_error(true);
 
     TMR2_SetInterruptHandler(connection_signal_timer);
+    TMR3_SetInterruptHandler(led_signal_event);
     set_connecion_state_handler(usb_connection);
 
-    delay_ms(100);
-    LED_ERROR_SetLow();
+    delay_ms(200);
+    led_error(false);
 
     while (1) {
         call_connect_state_handler();
