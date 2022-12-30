@@ -75,18 +75,20 @@
 #include "pin_manager.h"
 #include "clock.h"
 #include "system.h"
+#include "tmr2.h"
+#include "tmr3.h"
 #include "usb/usb.h"
 #include "interrupt_manager.h"
 #include "traps.h"
-#include "tmr2.h"
 
 void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
-    INTERRUPT_Initialize();
     CLOCK_Initialize();
+    INTERRUPT_Initialize();
     USBDeviceInit();
     USBDeviceAttach();
+    TMR3_Initialize();
     TMR2_Initialize();
 }
 

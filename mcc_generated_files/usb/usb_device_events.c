@@ -52,8 +52,7 @@ please contact mla_licensing@microchip.com
 bool USER_USB_CALLBACK_EVENT_HANDLER(USB_EVENT event, void *pdata, uint16_t size) {
     connection_signal_idle();
 
-    switch( (int) event )
-    {
+    switch( (int) event ) {
         case EVENT_TRANSFER:
             break;
 
@@ -99,6 +98,7 @@ bool USER_USB_CALLBACK_EVENT_HANDLER(USB_EVENT event, void *pdata, uint16_t size
         default:
             break;
     }
+
     return true;
 }
 

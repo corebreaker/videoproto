@@ -6,14 +6,15 @@
                    projectFiles="true">
       <logicalFolder name="f1" displayName="Application" projectFiles="true">
         <logicalFolder name="f2" displayName="Flasher" projectFiles="true">
+          <itemPath>app/flasher.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f1" displayName="Programmer" projectFiles="true">
         </logicalFolder>
         <itemPath>app/app.h</itemPath>
         <itemPath>app/connect_state.h</itemPath>
         <itemPath>app/result.h</itemPath>
-        <itemPath>app/leds.h</itemPath>
         <itemPath>app/app_data.h</itemPath>
+        <itemPath>app/prog_data.h</itemPath>
       </logicalFolder>
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
@@ -49,14 +50,14 @@
                    projectFiles="true">
       <logicalFolder name="f1" displayName="Application" projectFiles="true">
         <logicalFolder name="f2" displayName="Flasher" projectFiles="true">
+          <itemPath>app/flasher.c</itemPath>
         </logicalFolder>
         <logicalFolder name="f1" displayName="Programmer" projectFiles="true">
         </logicalFolder>
         <itemPath>app/app.c</itemPath>
         <itemPath>app/connect_state.c</itemPath>
-        <itemPath>app/result.c</itemPath>
-        <itemPath>app/leds.c</itemPath>
         <itemPath>app/app_data.c</itemPath>
+        <itemPath>app/result.c</itemPath>
       </logicalFolder>
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
@@ -92,7 +93,6 @@
   </logicalFolder>
   <sourceRootList>
     <Elem>app</Elem>
-    <Elem>mcc_generated_files/usb</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -316,7 +316,6 @@
         <property key="debugoptions.debug-startup" value="Halt at main"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
-        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
