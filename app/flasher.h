@@ -9,14 +9,14 @@
 #define	FLASHER_H
 
 #include <stdbool.h>
-#include "./data.h"
+#include "./app_data.h"
 
 #ifdef	__cplusplus
 extern "C" {
 #endif
 
-bool flasher_cmd_header(t_endpoint_data *);
-bool flasher_cmd_record(t_endpoint_data *);
+bool flasher_cmd_header(t_ep_data *);
+bool flasher_cmd_record(t_ep_data *);
 
 #ifdef	__cplusplus
 }

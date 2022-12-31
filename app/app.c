@@ -4,34 +4,33 @@
 #include "../delay.h"
 #include "./connect_state.h"
 #include "./flasher.h"
-#include "./app.h"
 
 #define FLASHER_EP 1
 
-static t_endpoint_data flasher;
+static t_ep_data flasher;
 
-static uint16_t get_len(t_endpoint_data *data) {
-    data->len = sizeof(data->buffer);
-    if (data->len > USBHandleGetLength(data->handle))
-        data->len = USBHandleGetLength(data->handle);
+static uint16_t get_len(t_ep_data *data) {
+    data->size = sizeof(data->buffer);
+    if (data->size > USBHandleGetLength(data->handle))
+        data->size = USBHandleGetLength(data->handle);
 
-    return data->len;
+    return data->size;
 }
 
-static void read(uint8_t ep, t_endpoint_data *data) {
+static void read(uint8_t ep, t_ep_data *data) {
     uint16_t size = sizeof(data->buffer);
 
     data->handle = USBRxOnePacket(ep, &data->buffer[0], size);
     data->to_send = false;
 }
 
-static void write(uint8_t ep, t_endpoint_data *data) {
+static void write(uint8_t ep, t_ep_data *data) {
     if (!data) {
         read(ep, data);
         return;
     }
 
-    data->handle = USBTxOnePacket(ep, &data->buffer[0], data->len);
+    data->handle = USBTxOnePacket(ep, &data->buffer[0], data->size);
     data->to_send = true;
 }
 
@@ -45,7 +44,7 @@ static void manage_endpoint_flasher() {
         switch (flasher.buffer[0]) {
             case 0x01:
             {
-                t_endpoint_data *data = NULL;
+                t_ep_data *data = NULL;
 
                 if (flasher_cmd_header(&flasher)) {
                     data = &flasher;
@@ -57,7 +56,7 @@ static void manage_endpoint_flasher() {
 
             case 0x02:
             {
-                t_endpoint_data *data = NULL;
+                t_ep_data *data = NULL;
                 
                 if (flasher_cmd_record(&flasher)) {
                     data = &flasher;
@@ -80,6 +79,7 @@ void app_loop(void) {
     if (!is_connected()) return;
     
     if (!USBHandleBusy(flasher.handle)) {
+        //memset(&/*data->buffer*/bb, 0, sizeof(data->buffer));
         manage_endpoint_flasher();
     }
 }
