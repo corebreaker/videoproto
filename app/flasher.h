@@ -5,8 +5,8 @@
  * Created on 29 novembre 2022, 05:40
  */
 
-#ifndef FLASHER_H
-#define	FLASHER_H
+#ifndef APP_FLASHER_H
+#define	APP_FLASHER_H
 
 #include <stdbool.h>
 #include "./app_data.h"
@@ -22,4 +22,4 @@ bool flasher_cmd_record(t_ep_data *);
 }
 #endif
 
-#endif	/* FLASHER_H */
+#endif	/* APP_FLASHER_H */

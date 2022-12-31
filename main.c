@@ -74,6 +74,8 @@ int main(void) {
     TMR3_SetInterruptHandler(led_signal_event);
     set_connecion_state_handler(usb_connection);
 
+    init_app();
+
     delay_ms(200);
     led_error(false);
 

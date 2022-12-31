@@ -350,3 +350,7 @@ t_ep_data flasher = {
     .callback_count = sizeof(flasher_callbacks) / sizeof(flasher_callbacks[0]),
     .callbacks = flasher_callbacks
 };
+
+t_ep_data *get_flasher_data() {
+    return &flasher;
+}

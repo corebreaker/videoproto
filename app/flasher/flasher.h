@@ -10,6 +10,6 @@
 
 #include "../app_data.h"
 
-extern t_ep_data flasher;
+t_ep_data *get_flasher_data();
 
 #endif	/* FLASHER_H */

@@ -75,7 +75,7 @@ bool USER_USB_CALLBACK_EVENT_HANDLER(USB_EVENT event, void *pdata, uint16_t size
             break;
 
         case EVENT_CONFIGURED:
-            init_app();
+            start_app();
             break;
 
         case EVENT_SET_DESCRIPTOR:
