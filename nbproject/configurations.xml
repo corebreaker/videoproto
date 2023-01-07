@@ -21,6 +21,10 @@
         <itemPath>app/leds.h</itemPath>
         <itemPath>app/flasher.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="f2" displayName="Display" projectFiles="true">
+        <itemPath>display/display.h</itemPath>
+        <itemPath>display/io.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
                      projectFiles="true">
@@ -43,6 +47,7 @@
         <itemPath>mcc_generated_files/system.h</itemPath>
         <itemPath>mcc_generated_files/tmr2.h</itemPath>
         <itemPath>mcc_generated_files/tmr3.h</itemPath>
+        <itemPath>mcc_generated_files/spi1.h</itemPath>
       </logicalFolder>
       <itemPath>delay.h</itemPath>
     </logicalFolder>
@@ -68,6 +73,10 @@
         <itemPath>app/leds.c</itemPath>
         <itemPath>app/flasher.c</itemPath>
       </logicalFolder>
+      <logicalFolder name="f2" displayName="Display" projectFiles="true">
+        <itemPath>display/display.c</itemPath>
+        <itemPath>display/io.c</itemPath>
+      </logicalFolder>
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
                      projectFiles="true">
@@ -89,6 +98,7 @@
         <itemPath>mcc_generated_files/mcc.c</itemPath>
         <itemPath>mcc_generated_files/tmr2.c</itemPath>
         <itemPath>mcc_generated_files/tmr3.c</itemPath>
+        <itemPath>mcc_generated_files/spi1.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>delay.c</itemPath>
@@ -101,7 +111,8 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>app</Elem>
+    <Elem>screen</Elem>
+    <Elem>display</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -325,6 +336,7 @@
         <property key="debugoptions.debug-startup" value="Halt at main"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>

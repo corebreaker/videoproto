@@ -27,6 +27,9 @@ void led_error(bool on);
 void led_prog(bool on);
 void led_flash(bool on);
 
+void led_right(bool on);
+void led_left(bool on);
+
 void led_signal_event();
 void led_signal_activate(t_led_signal_type signal_type, uint32_t val);
 

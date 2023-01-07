@@ -54,6 +54,11 @@
 #include "pin_manager.h"
 
 /**
+ Section: File specific functions
+*/
+void (*CN_InterruptHandler)(void) = NULL;
+
+/**
  Section: Driver Interface Function Definitions
 */
 void PIN_MANAGER_Initialize (void)
@@ -71,12 +76,12 @@ void PIN_MANAGER_Initialize (void)
     /****************************************************************************
      * Setting the GPIO Direction SFR(s)
      ***************************************************************************/
-    TRISB = 0x7F03;
+    TRISB = 0x7003;
     TRISC = 0x3000;
     TRISD = 0x0FFF;
-    TRISE = 0x00FF;
+    TRISE = 0x0000;
     TRISF = 0x0008;
-    TRISG = 0x000C;
+    TRISG = 0x008C;
 
     /****************************************************************************
      * Setting the Weak Pull Up and Weak Pull Down SFR(s)
@@ -106,6 +111,64 @@ void PIN_MANAGER_Initialize (void)
      * Setting the Analog/Digital Configuration SFR(s)
      ***************************************************************************/
     AD1PCFGH = 0x0000;
-    AD1PCFGL = 0x80FF;
+    AD1PCFGL = 0x9FFF;
+    
+    /****************************************************************************
+     * Set the PPS
+     ***************************************************************************/
+    __builtin_write_OSCCONL(OSCCON & 0xbf); // unlock PPS
+
+    RPINR20bits.SDI1R = 0x001A;    //RG7->SPI1:SDI1
+    RPOR9bits.RP19R = 0x0008;    //RG8->SPI1:SCK1OUT
+    RPOR10bits.RP21R = 0x0007;    //RG6->SPI1:SDO1
+    RPOR13bits.RP27R = 0x0009;    //RG9->SPI1:SS1OUT
+
+    __builtin_write_OSCCONL(OSCCON | 0x40); // lock PPS
+    
+    /****************************************************************************
+     * Interrupt On Change: any
+     ***************************************************************************/
+    CNEN2bits.CN30IE = 1;    //Pin : RB12
+    
+    /* Initialize IOC Interrupt Handler*/
+    CN_SetInterruptHandler(&CN_CallBack);
+    
+    /****************************************************************************
+     * Interrupt On Change: Interrupt Enable
+     ***************************************************************************/
+    IFS1bits.CNIF = 0; //Clear CNI interrupt flag
+    IEC1bits.CNIE = 1; //Enable CNI interrupt
+}
+
+void __attribute__ ((weak)) CN_CallBack(void)
+{
+
+}
+
+void CN_SetInterruptHandler(void (* InterruptHandler)(void))
+{ 
+    IEC1bits.CNIE = 0; //Disable CNI interrupt
+    CN_InterruptHandler = InterruptHandler; 
+    IEC1bits.CNIE = 1; //Enable CNI interrupt
+}
+
+void CN_SetIOCInterruptHandler(void *handler)
+{ 
+    CN_SetInterruptHandler(handler);
+}
+
+/* Interrupt service routine for the CNI interrupt. */
+void __attribute__ (( interrupt, no_auto_psv )) _CNInterrupt ( void )
+{
+    if(IFS1bits.CNIF == 1)
+    {
+        if(CN_InterruptHandler) 
+        { 
+            CN_InterruptHandler(); 
+        }
+        
+        // Clear the flag
+        IFS1bits.CNIF = 0;
+    }
 }
 

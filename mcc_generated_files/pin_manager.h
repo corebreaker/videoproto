@@ -56,6 +56,444 @@
 */
 /**
   @Summary
+    Sets the GPIO pin, RB10, high using LATB10.
+
+  @Description
+    Sets the GPIO pin, RB10, high using LATB10.
+
+  @Preconditions
+    The RB10 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RB10 high (1)
+    EXT_RW_SetHigh();
+    </code>
+
+*/
+#define EXT_RW_SetHigh()          (_LATB10 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RB10, low using LATB10.
+
+  @Description
+    Sets the GPIO pin, RB10, low using LATB10.
+
+  @Preconditions
+    The RB10 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RB10 low (0)
+    EXT_RW_SetLow();
+    </code>
+
+*/
+#define EXT_RW_SetLow()           (_LATB10 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RB10, using LATB10.
+
+  @Description
+    Toggles the GPIO pin, RB10, using LATB10.
+
+  @Preconditions
+    The RB10 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RB10
+    EXT_RW_Toggle();
+    </code>
+
+*/
+#define EXT_RW_Toggle()           (_LATB10 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RB10.
+
+  @Description
+    Reads the value of the GPIO pin, RB10.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RB10
+    postValue = EXT_RW_GetValue();
+    </code>
+
+*/
+#define EXT_RW_GetValue()         _RB10
+/**
+  @Summary
+    Configures the GPIO pin, RB10, as an input.
+
+  @Description
+    Configures the GPIO pin, RB10, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RB10 as an input
+    EXT_RW_SetDigitalInput();
+    </code>
+
+*/
+#define EXT_RW_SetDigitalInput()  (_TRISB10 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RB10, as an output.
+
+  @Description
+    Configures the GPIO pin, RB10, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RB10 as an output
+    EXT_RW_SetDigitalOutput();
+    </code>
+
+*/
+#define EXT_RW_SetDigitalOutput() (_TRISB10 = 0)
+/**
+  @Summary
+    Sets the GPIO pin, RB11, high using LATB11.
+
+  @Description
+    Sets the GPIO pin, RB11, high using LATB11.
+
+  @Preconditions
+    The RB11 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RB11 high (1)
+    EXT_ENABLE_SetHigh();
+    </code>
+
+*/
+#define EXT_ENABLE_SetHigh()          (_LATB11 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RB11, low using LATB11.
+
+  @Description
+    Sets the GPIO pin, RB11, low using LATB11.
+
+  @Preconditions
+    The RB11 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RB11 low (0)
+    EXT_ENABLE_SetLow();
+    </code>
+
+*/
+#define EXT_ENABLE_SetLow()           (_LATB11 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RB11, using LATB11.
+
+  @Description
+    Toggles the GPIO pin, RB11, using LATB11.
+
+  @Preconditions
+    The RB11 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RB11
+    EXT_ENABLE_Toggle();
+    </code>
+
+*/
+#define EXT_ENABLE_Toggle()           (_LATB11 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RB11.
+
+  @Description
+    Reads the value of the GPIO pin, RB11.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RB11
+    postValue = EXT_ENABLE_GetValue();
+    </code>
+
+*/
+#define EXT_ENABLE_GetValue()         _RB11
+/**
+  @Summary
+    Configures the GPIO pin, RB11, as an input.
+
+  @Description
+    Configures the GPIO pin, RB11, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RB11 as an input
+    EXT_ENABLE_SetDigitalInput();
+    </code>
+
+*/
+#define EXT_ENABLE_SetDigitalInput()  (_TRISB11 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RB11, as an output.
+
+  @Description
+    Configures the GPIO pin, RB11, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RB11 as an output
+    EXT_ENABLE_SetDigitalOutput();
+    </code>
+
+*/
+#define EXT_ENABLE_SetDigitalOutput() (_TRISB11 = 0)
+/**
+  @Summary
+    Sets the GPIO pin, RB12, high using LATB12.
+
+  @Description
+    Sets the GPIO pin, RB12, high using LATB12.
+
+  @Preconditions
+    The RB12 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RB12 high (1)
+    EXT_APPLY_SetHigh();
+    </code>
+
+*/
+#define EXT_APPLY_SetHigh()          (_LATB12 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RB12, low using LATB12.
+
+  @Description
+    Sets the GPIO pin, RB12, low using LATB12.
+
+  @Preconditions
+    The RB12 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RB12 low (0)
+    EXT_APPLY_SetLow();
+    </code>
+
+*/
+#define EXT_APPLY_SetLow()           (_LATB12 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RB12, using LATB12.
+
+  @Description
+    Toggles the GPIO pin, RB12, using LATB12.
+
+  @Preconditions
+    The RB12 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RB12
+    EXT_APPLY_Toggle();
+    </code>
+
+*/
+#define EXT_APPLY_Toggle()           (_LATB12 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RB12.
+
+  @Description
+    Reads the value of the GPIO pin, RB12.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RB12
+    postValue = EXT_APPLY_GetValue();
+    </code>
+
+*/
+#define EXT_APPLY_GetValue()         _RB12
+/**
+  @Summary
+    Configures the GPIO pin, RB12, as an input.
+
+  @Description
+    Configures the GPIO pin, RB12, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RB12 as an input
+    EXT_APPLY_SetDigitalInput();
+    </code>
+
+*/
+#define EXT_APPLY_SetDigitalInput()  (_TRISB12 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RB12, as an output.
+
+  @Description
+    Configures the GPIO pin, RB12, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RB12 as an output
+    EXT_APPLY_SetDigitalOutput();
+    </code>
+
+*/
+#define EXT_APPLY_SetDigitalOutput() (_TRISB12 = 0)
+/**
+  @Summary
     Sets the GPIO pin, RB2, high using LATB2.
 
   @Description
@@ -932,6 +1370,1466 @@
 #define PRG_DAT_SetDigitalOutput() (_TRISB7 = 0)
 /**
   @Summary
+    Sets the GPIO pin, RB8, high using LATB8.
+
+  @Description
+    Sets the GPIO pin, RB8, high using LATB8.
+
+  @Preconditions
+    The RB8 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RB8 high (1)
+    EXT_ADDR0_SetHigh();
+    </code>
+
+*/
+#define EXT_ADDR0_SetHigh()          (_LATB8 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RB8, low using LATB8.
+
+  @Description
+    Sets the GPIO pin, RB8, low using LATB8.
+
+  @Preconditions
+    The RB8 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RB8 low (0)
+    EXT_ADDR0_SetLow();
+    </code>
+
+*/
+#define EXT_ADDR0_SetLow()           (_LATB8 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RB8, using LATB8.
+
+  @Description
+    Toggles the GPIO pin, RB8, using LATB8.
+
+  @Preconditions
+    The RB8 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RB8
+    EXT_ADDR0_Toggle();
+    </code>
+
+*/
+#define EXT_ADDR0_Toggle()           (_LATB8 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RB8.
+
+  @Description
+    Reads the value of the GPIO pin, RB8.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RB8
+    postValue = EXT_ADDR0_GetValue();
+    </code>
+
+*/
+#define EXT_ADDR0_GetValue()         _RB8
+/**
+  @Summary
+    Configures the GPIO pin, RB8, as an input.
+
+  @Description
+    Configures the GPIO pin, RB8, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RB8 as an input
+    EXT_ADDR0_SetDigitalInput();
+    </code>
+
+*/
+#define EXT_ADDR0_SetDigitalInput()  (_TRISB8 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RB8, as an output.
+
+  @Description
+    Configures the GPIO pin, RB8, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RB8 as an output
+    EXT_ADDR0_SetDigitalOutput();
+    </code>
+
+*/
+#define EXT_ADDR0_SetDigitalOutput() (_TRISB8 = 0)
+/**
+  @Summary
+    Sets the GPIO pin, RB9, high using LATB9.
+
+  @Description
+    Sets the GPIO pin, RB9, high using LATB9.
+
+  @Preconditions
+    The RB9 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RB9 high (1)
+    EXT_ADDR1_SetHigh();
+    </code>
+
+*/
+#define EXT_ADDR1_SetHigh()          (_LATB9 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RB9, low using LATB9.
+
+  @Description
+    Sets the GPIO pin, RB9, low using LATB9.
+
+  @Preconditions
+    The RB9 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RB9 low (0)
+    EXT_ADDR1_SetLow();
+    </code>
+
+*/
+#define EXT_ADDR1_SetLow()           (_LATB9 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RB9, using LATB9.
+
+  @Description
+    Toggles the GPIO pin, RB9, using LATB9.
+
+  @Preconditions
+    The RB9 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RB9
+    EXT_ADDR1_Toggle();
+    </code>
+
+*/
+#define EXT_ADDR1_Toggle()           (_LATB9 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RB9.
+
+  @Description
+    Reads the value of the GPIO pin, RB9.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RB9
+    postValue = EXT_ADDR1_GetValue();
+    </code>
+
+*/
+#define EXT_ADDR1_GetValue()         _RB9
+/**
+  @Summary
+    Configures the GPIO pin, RB9, as an input.
+
+  @Description
+    Configures the GPIO pin, RB9, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RB9 as an input
+    EXT_ADDR1_SetDigitalInput();
+    </code>
+
+*/
+#define EXT_ADDR1_SetDigitalInput()  (_TRISB9 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RB9, as an output.
+
+  @Description
+    Configures the GPIO pin, RB9, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RB9 as an output
+    EXT_ADDR1_SetDigitalOutput();
+    </code>
+
+*/
+#define EXT_ADDR1_SetDigitalOutput() (_TRISB9 = 0)
+/**
+  @Summary
+    Sets the GPIO pin, RE0, high using LATE0.
+
+  @Description
+    Sets the GPIO pin, RE0, high using LATE0.
+
+  @Preconditions
+    The RE0 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE0 high (1)
+    EXT_D0_SetHigh();
+    </code>
+
+*/
+#define EXT_D0_SetHigh()          (_LATE0 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RE0, low using LATE0.
+
+  @Description
+    Sets the GPIO pin, RE0, low using LATE0.
+
+  @Preconditions
+    The RE0 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE0 low (0)
+    EXT_D0_SetLow();
+    </code>
+
+*/
+#define EXT_D0_SetLow()           (_LATE0 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RE0, using LATE0.
+
+  @Description
+    Toggles the GPIO pin, RE0, using LATE0.
+
+  @Preconditions
+    The RE0 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RE0
+    EXT_D0_Toggle();
+    </code>
+
+*/
+#define EXT_D0_Toggle()           (_LATE0 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RE0.
+
+  @Description
+    Reads the value of the GPIO pin, RE0.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RE0
+    postValue = EXT_D0_GetValue();
+    </code>
+
+*/
+#define EXT_D0_GetValue()         _RE0
+/**
+  @Summary
+    Configures the GPIO pin, RE0, as an input.
+
+  @Description
+    Configures the GPIO pin, RE0, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE0 as an input
+    EXT_D0_SetDigitalInput();
+    </code>
+
+*/
+#define EXT_D0_SetDigitalInput()  (_TRISE0 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RE0, as an output.
+
+  @Description
+    Configures the GPIO pin, RE0, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE0 as an output
+    EXT_D0_SetDigitalOutput();
+    </code>
+
+*/
+#define EXT_D0_SetDigitalOutput() (_TRISE0 = 0)
+/**
+  @Summary
+    Sets the GPIO pin, RE1, high using LATE1.
+
+  @Description
+    Sets the GPIO pin, RE1, high using LATE1.
+
+  @Preconditions
+    The RE1 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE1 high (1)
+    EXT_D1_SetHigh();
+    </code>
+
+*/
+#define EXT_D1_SetHigh()          (_LATE1 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RE1, low using LATE1.
+
+  @Description
+    Sets the GPIO pin, RE1, low using LATE1.
+
+  @Preconditions
+    The RE1 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE1 low (0)
+    EXT_D1_SetLow();
+    </code>
+
+*/
+#define EXT_D1_SetLow()           (_LATE1 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RE1, using LATE1.
+
+  @Description
+    Toggles the GPIO pin, RE1, using LATE1.
+
+  @Preconditions
+    The RE1 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RE1
+    EXT_D1_Toggle();
+    </code>
+
+*/
+#define EXT_D1_Toggle()           (_LATE1 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RE1.
+
+  @Description
+    Reads the value of the GPIO pin, RE1.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RE1
+    postValue = EXT_D1_GetValue();
+    </code>
+
+*/
+#define EXT_D1_GetValue()         _RE1
+/**
+  @Summary
+    Configures the GPIO pin, RE1, as an input.
+
+  @Description
+    Configures the GPIO pin, RE1, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE1 as an input
+    EXT_D1_SetDigitalInput();
+    </code>
+
+*/
+#define EXT_D1_SetDigitalInput()  (_TRISE1 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RE1, as an output.
+
+  @Description
+    Configures the GPIO pin, RE1, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE1 as an output
+    EXT_D1_SetDigitalOutput();
+    </code>
+
+*/
+#define EXT_D1_SetDigitalOutput() (_TRISE1 = 0)
+/**
+  @Summary
+    Sets the GPIO pin, RE2, high using LATE2.
+
+  @Description
+    Sets the GPIO pin, RE2, high using LATE2.
+
+  @Preconditions
+    The RE2 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE2 high (1)
+    EXT_D2_SetHigh();
+    </code>
+
+*/
+#define EXT_D2_SetHigh()          (_LATE2 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RE2, low using LATE2.
+
+  @Description
+    Sets the GPIO pin, RE2, low using LATE2.
+
+  @Preconditions
+    The RE2 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE2 low (0)
+    EXT_D2_SetLow();
+    </code>
+
+*/
+#define EXT_D2_SetLow()           (_LATE2 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RE2, using LATE2.
+
+  @Description
+    Toggles the GPIO pin, RE2, using LATE2.
+
+  @Preconditions
+    The RE2 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RE2
+    EXT_D2_Toggle();
+    </code>
+
+*/
+#define EXT_D2_Toggle()           (_LATE2 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RE2.
+
+  @Description
+    Reads the value of the GPIO pin, RE2.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RE2
+    postValue = EXT_D2_GetValue();
+    </code>
+
+*/
+#define EXT_D2_GetValue()         _RE2
+/**
+  @Summary
+    Configures the GPIO pin, RE2, as an input.
+
+  @Description
+    Configures the GPIO pin, RE2, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE2 as an input
+    EXT_D2_SetDigitalInput();
+    </code>
+
+*/
+#define EXT_D2_SetDigitalInput()  (_TRISE2 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RE2, as an output.
+
+  @Description
+    Configures the GPIO pin, RE2, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE2 as an output
+    EXT_D2_SetDigitalOutput();
+    </code>
+
+*/
+#define EXT_D2_SetDigitalOutput() (_TRISE2 = 0)
+/**
+  @Summary
+    Sets the GPIO pin, RE3, high using LATE3.
+
+  @Description
+    Sets the GPIO pin, RE3, high using LATE3.
+
+  @Preconditions
+    The RE3 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE3 high (1)
+    EXT_D3_SetHigh();
+    </code>
+
+*/
+#define EXT_D3_SetHigh()          (_LATE3 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RE3, low using LATE3.
+
+  @Description
+    Sets the GPIO pin, RE3, low using LATE3.
+
+  @Preconditions
+    The RE3 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE3 low (0)
+    EXT_D3_SetLow();
+    </code>
+
+*/
+#define EXT_D3_SetLow()           (_LATE3 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RE3, using LATE3.
+
+  @Description
+    Toggles the GPIO pin, RE3, using LATE3.
+
+  @Preconditions
+    The RE3 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RE3
+    EXT_D3_Toggle();
+    </code>
+
+*/
+#define EXT_D3_Toggle()           (_LATE3 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RE3.
+
+  @Description
+    Reads the value of the GPIO pin, RE3.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RE3
+    postValue = EXT_D3_GetValue();
+    </code>
+
+*/
+#define EXT_D3_GetValue()         _RE3
+/**
+  @Summary
+    Configures the GPIO pin, RE3, as an input.
+
+  @Description
+    Configures the GPIO pin, RE3, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE3 as an input
+    EXT_D3_SetDigitalInput();
+    </code>
+
+*/
+#define EXT_D3_SetDigitalInput()  (_TRISE3 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RE3, as an output.
+
+  @Description
+    Configures the GPIO pin, RE3, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE3 as an output
+    EXT_D3_SetDigitalOutput();
+    </code>
+
+*/
+#define EXT_D3_SetDigitalOutput() (_TRISE3 = 0)
+/**
+  @Summary
+    Sets the GPIO pin, RE4, high using LATE4.
+
+  @Description
+    Sets the GPIO pin, RE4, high using LATE4.
+
+  @Preconditions
+    The RE4 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE4 high (1)
+    EXT_D4_SetHigh();
+    </code>
+
+*/
+#define EXT_D4_SetHigh()          (_LATE4 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RE4, low using LATE4.
+
+  @Description
+    Sets the GPIO pin, RE4, low using LATE4.
+
+  @Preconditions
+    The RE4 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE4 low (0)
+    EXT_D4_SetLow();
+    </code>
+
+*/
+#define EXT_D4_SetLow()           (_LATE4 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RE4, using LATE4.
+
+  @Description
+    Toggles the GPIO pin, RE4, using LATE4.
+
+  @Preconditions
+    The RE4 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RE4
+    EXT_D4_Toggle();
+    </code>
+
+*/
+#define EXT_D4_Toggle()           (_LATE4 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RE4.
+
+  @Description
+    Reads the value of the GPIO pin, RE4.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RE4
+    postValue = EXT_D4_GetValue();
+    </code>
+
+*/
+#define EXT_D4_GetValue()         _RE4
+/**
+  @Summary
+    Configures the GPIO pin, RE4, as an input.
+
+  @Description
+    Configures the GPIO pin, RE4, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE4 as an input
+    EXT_D4_SetDigitalInput();
+    </code>
+
+*/
+#define EXT_D4_SetDigitalInput()  (_TRISE4 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RE4, as an output.
+
+  @Description
+    Configures the GPIO pin, RE4, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE4 as an output
+    EXT_D4_SetDigitalOutput();
+    </code>
+
+*/
+#define EXT_D4_SetDigitalOutput() (_TRISE4 = 0)
+/**
+  @Summary
+    Sets the GPIO pin, RE5, high using LATE5.
+
+  @Description
+    Sets the GPIO pin, RE5, high using LATE5.
+
+  @Preconditions
+    The RE5 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE5 high (1)
+    EXT_D5_SetHigh();
+    </code>
+
+*/
+#define EXT_D5_SetHigh()          (_LATE5 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RE5, low using LATE5.
+
+  @Description
+    Sets the GPIO pin, RE5, low using LATE5.
+
+  @Preconditions
+    The RE5 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE5 low (0)
+    EXT_D5_SetLow();
+    </code>
+
+*/
+#define EXT_D5_SetLow()           (_LATE5 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RE5, using LATE5.
+
+  @Description
+    Toggles the GPIO pin, RE5, using LATE5.
+
+  @Preconditions
+    The RE5 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RE5
+    EXT_D5_Toggle();
+    </code>
+
+*/
+#define EXT_D5_Toggle()           (_LATE5 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RE5.
+
+  @Description
+    Reads the value of the GPIO pin, RE5.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RE5
+    postValue = EXT_D5_GetValue();
+    </code>
+
+*/
+#define EXT_D5_GetValue()         _RE5
+/**
+  @Summary
+    Configures the GPIO pin, RE5, as an input.
+
+  @Description
+    Configures the GPIO pin, RE5, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE5 as an input
+    EXT_D5_SetDigitalInput();
+    </code>
+
+*/
+#define EXT_D5_SetDigitalInput()  (_TRISE5 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RE5, as an output.
+
+  @Description
+    Configures the GPIO pin, RE5, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE5 as an output
+    EXT_D5_SetDigitalOutput();
+    </code>
+
+*/
+#define EXT_D5_SetDigitalOutput() (_TRISE5 = 0)
+/**
+  @Summary
+    Sets the GPIO pin, RE6, high using LATE6.
+
+  @Description
+    Sets the GPIO pin, RE6, high using LATE6.
+
+  @Preconditions
+    The RE6 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE6 high (1)
+    EXT_D6_SetHigh();
+    </code>
+
+*/
+#define EXT_D6_SetHigh()          (_LATE6 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RE6, low using LATE6.
+
+  @Description
+    Sets the GPIO pin, RE6, low using LATE6.
+
+  @Preconditions
+    The RE6 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE6 low (0)
+    EXT_D6_SetLow();
+    </code>
+
+*/
+#define EXT_D6_SetLow()           (_LATE6 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RE6, using LATE6.
+
+  @Description
+    Toggles the GPIO pin, RE6, using LATE6.
+
+  @Preconditions
+    The RE6 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RE6
+    EXT_D6_Toggle();
+    </code>
+
+*/
+#define EXT_D6_Toggle()           (_LATE6 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RE6.
+
+  @Description
+    Reads the value of the GPIO pin, RE6.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RE6
+    postValue = EXT_D6_GetValue();
+    </code>
+
+*/
+#define EXT_D6_GetValue()         _RE6
+/**
+  @Summary
+    Configures the GPIO pin, RE6, as an input.
+
+  @Description
+    Configures the GPIO pin, RE6, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE6 as an input
+    EXT_D6_SetDigitalInput();
+    </code>
+
+*/
+#define EXT_D6_SetDigitalInput()  (_TRISE6 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RE6, as an output.
+
+  @Description
+    Configures the GPIO pin, RE6, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE6 as an output
+    EXT_D6_SetDigitalOutput();
+    </code>
+
+*/
+#define EXT_D6_SetDigitalOutput() (_TRISE6 = 0)
+/**
+  @Summary
+    Sets the GPIO pin, RE7, high using LATE7.
+
+  @Description
+    Sets the GPIO pin, RE7, high using LATE7.
+
+  @Preconditions
+    The RE7 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE7 high (1)
+    EXT_D7_SetHigh();
+    </code>
+
+*/
+#define EXT_D7_SetHigh()          (_LATE7 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RE7, low using LATE7.
+
+  @Description
+    Sets the GPIO pin, RE7, low using LATE7.
+
+  @Preconditions
+    The RE7 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE7 low (0)
+    EXT_D7_SetLow();
+    </code>
+
+*/
+#define EXT_D7_SetLow()           (_LATE7 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RE7, using LATE7.
+
+  @Description
+    Toggles the GPIO pin, RE7, using LATE7.
+
+  @Preconditions
+    The RE7 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RE7
+    EXT_D7_Toggle();
+    </code>
+
+*/
+#define EXT_D7_Toggle()           (_LATE7 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RE7.
+
+  @Description
+    Reads the value of the GPIO pin, RE7.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RE7
+    postValue = EXT_D7_GetValue();
+    </code>
+
+*/
+#define EXT_D7_GetValue()         _RE7
+/**
+  @Summary
+    Configures the GPIO pin, RE7, as an input.
+
+  @Description
+    Configures the GPIO pin, RE7, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE7 as an input
+    EXT_D7_SetDigitalInput();
+    </code>
+
+*/
+#define EXT_D7_SetDigitalInput()  (_TRISE7 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RE7, as an output.
+
+  @Description
+    Configures the GPIO pin, RE7, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE7 as an output
+    EXT_D7_SetDigitalOutput();
+    </code>
+
+*/
+#define EXT_D7_SetDigitalOutput() (_TRISE7 = 0)
+/**
+  @Summary
     Sets the GPIO pin, RF0, high using LATF0.
 
   @Description
@@ -1533,11 +3431,11 @@
   @Example
     <code>
     // Set RG6 high (1)
-    IO_RG6_SetHigh();
+    SPI_MOSI_SetHigh();
     </code>
 
 */
-#define IO_RG6_SetHigh()          (_LATG6 = 1)
+#define SPI_MOSI_SetHigh()          (_LATG6 = 1)
 /**
   @Summary
     Sets the GPIO pin, RG6, low using LATG6.
@@ -1557,11 +3455,11 @@
   @Example
     <code>
     // Set RG6 low (0)
-    IO_RG6_SetLow();
+    SPI_MOSI_SetLow();
     </code>
 
 */
-#define IO_RG6_SetLow()           (_LATG6 = 0)
+#define SPI_MOSI_SetLow()           (_LATG6 = 0)
 /**
   @Summary
     Toggles the GPIO pin, RG6, using LATG6.
@@ -1581,11 +3479,11 @@
   @Example
     <code>
     // Toggle RG6
-    IO_RG6_Toggle();
+    SPI_MOSI_Toggle();
     </code>
 
 */
-#define IO_RG6_Toggle()           (_LATG6 ^= 1)
+#define SPI_MOSI_Toggle()           (_LATG6 ^= 1)
 /**
   @Summary
     Reads the value of the GPIO pin, RG6.
@@ -1607,11 +3505,11 @@
     uint16_t portValue;
 
     // Read RG6
-    postValue = IO_RG6_GetValue();
+    postValue = SPI_MOSI_GetValue();
     </code>
 
 */
-#define IO_RG6_GetValue()         _RG6
+#define SPI_MOSI_GetValue()         _RG6
 /**
   @Summary
     Configures the GPIO pin, RG6, as an input.
@@ -1631,11 +3529,11 @@
   @Example
     <code>
     // Sets the RG6 as an input
-    IO_RG6_SetDigitalInput();
+    SPI_MOSI_SetDigitalInput();
     </code>
 
 */
-#define IO_RG6_SetDigitalInput()  (_TRISG6 = 1)
+#define SPI_MOSI_SetDigitalInput()  (_TRISG6 = 1)
 /**
   @Summary
     Configures the GPIO pin, RG6, as an output.
@@ -1655,11 +3553,11 @@
   @Example
     <code>
     // Sets the RG6 as an output
-    IO_RG6_SetDigitalOutput();
+    SPI_MOSI_SetDigitalOutput();
     </code>
 
 */
-#define IO_RG6_SetDigitalOutput() (_TRISG6 = 0)
+#define SPI_MOSI_SetDigitalOutput() (_TRISG6 = 0)
 /**
   @Summary
     Sets the GPIO pin, RG7, high using LATG7.
@@ -1679,11 +3577,11 @@
   @Example
     <code>
     // Set RG7 high (1)
-    IO_RG7_SetHigh();
+    SPI_MISO_SetHigh();
     </code>
 
 */
-#define IO_RG7_SetHigh()          (_LATG7 = 1)
+#define SPI_MISO_SetHigh()          (_LATG7 = 1)
 /**
   @Summary
     Sets the GPIO pin, RG7, low using LATG7.
@@ -1703,11 +3601,11 @@
   @Example
     <code>
     // Set RG7 low (0)
-    IO_RG7_SetLow();
+    SPI_MISO_SetLow();
     </code>
 
 */
-#define IO_RG7_SetLow()           (_LATG7 = 0)
+#define SPI_MISO_SetLow()           (_LATG7 = 0)
 /**
   @Summary
     Toggles the GPIO pin, RG7, using LATG7.
@@ -1727,11 +3625,11 @@
   @Example
     <code>
     // Toggle RG7
-    IO_RG7_Toggle();
+    SPI_MISO_Toggle();
     </code>
 
 */
-#define IO_RG7_Toggle()           (_LATG7 ^= 1)
+#define SPI_MISO_Toggle()           (_LATG7 ^= 1)
 /**
   @Summary
     Reads the value of the GPIO pin, RG7.
@@ -1753,11 +3651,11 @@
     uint16_t portValue;
 
     // Read RG7
-    postValue = IO_RG7_GetValue();
+    postValue = SPI_MISO_GetValue();
     </code>
 
 */
-#define IO_RG7_GetValue()         _RG7
+#define SPI_MISO_GetValue()         _RG7
 /**
   @Summary
     Configures the GPIO pin, RG7, as an input.
@@ -1777,11 +3675,11 @@
   @Example
     <code>
     // Sets the RG7 as an input
-    IO_RG7_SetDigitalInput();
+    SPI_MISO_SetDigitalInput();
     </code>
 
 */
-#define IO_RG7_SetDigitalInput()  (_TRISG7 = 1)
+#define SPI_MISO_SetDigitalInput()  (_TRISG7 = 1)
 /**
   @Summary
     Configures the GPIO pin, RG7, as an output.
@@ -1801,11 +3699,11 @@
   @Example
     <code>
     // Sets the RG7 as an output
-    IO_RG7_SetDigitalOutput();
+    SPI_MISO_SetDigitalOutput();
     </code>
 
 */
-#define IO_RG7_SetDigitalOutput() (_TRISG7 = 0)
+#define SPI_MISO_SetDigitalOutput() (_TRISG7 = 0)
 /**
   @Summary
     Sets the GPIO pin, RG8, high using LATG8.
@@ -1825,11 +3723,11 @@
   @Example
     <code>
     // Set RG8 high (1)
-    IO_RG8_SetHigh();
+    SPI_SCK_SetHigh();
     </code>
 
 */
-#define IO_RG8_SetHigh()          (_LATG8 = 1)
+#define SPI_SCK_SetHigh()          (_LATG8 = 1)
 /**
   @Summary
     Sets the GPIO pin, RG8, low using LATG8.
@@ -1849,11 +3747,11 @@
   @Example
     <code>
     // Set RG8 low (0)
-    IO_RG8_SetLow();
+    SPI_SCK_SetLow();
     </code>
 
 */
-#define IO_RG8_SetLow()           (_LATG8 = 0)
+#define SPI_SCK_SetLow()           (_LATG8 = 0)
 /**
   @Summary
     Toggles the GPIO pin, RG8, using LATG8.
@@ -1873,11 +3771,11 @@
   @Example
     <code>
     // Toggle RG8
-    IO_RG8_Toggle();
+    SPI_SCK_Toggle();
     </code>
 
 */
-#define IO_RG8_Toggle()           (_LATG8 ^= 1)
+#define SPI_SCK_Toggle()           (_LATG8 ^= 1)
 /**
   @Summary
     Reads the value of the GPIO pin, RG8.
@@ -1899,11 +3797,11 @@
     uint16_t portValue;
 
     // Read RG8
-    postValue = IO_RG8_GetValue();
+    postValue = SPI_SCK_GetValue();
     </code>
 
 */
-#define IO_RG8_GetValue()         _RG8
+#define SPI_SCK_GetValue()         _RG8
 /**
   @Summary
     Configures the GPIO pin, RG8, as an input.
@@ -1923,11 +3821,11 @@
   @Example
     <code>
     // Sets the RG8 as an input
-    IO_RG8_SetDigitalInput();
+    SPI_SCK_SetDigitalInput();
     </code>
 
 */
-#define IO_RG8_SetDigitalInput()  (_TRISG8 = 1)
+#define SPI_SCK_SetDigitalInput()  (_TRISG8 = 1)
 /**
   @Summary
     Configures the GPIO pin, RG8, as an output.
@@ -1947,11 +3845,11 @@
   @Example
     <code>
     // Sets the RG8 as an output
-    IO_RG8_SetDigitalOutput();
+    SPI_SCK_SetDigitalOutput();
     </code>
 
 */
-#define IO_RG8_SetDigitalOutput() (_TRISG8 = 0)
+#define SPI_SCK_SetDigitalOutput() (_TRISG8 = 0)
 /**
   @Summary
     Sets the GPIO pin, RG9, high using LATG9.
@@ -1971,11 +3869,11 @@
   @Example
     <code>
     // Set RG9 high (1)
-    IO_RG9_SetHigh();
+    SPI_SS_SetHigh();
     </code>
 
 */
-#define IO_RG9_SetHigh()          (_LATG9 = 1)
+#define SPI_SS_SetHigh()          (_LATG9 = 1)
 /**
   @Summary
     Sets the GPIO pin, RG9, low using LATG9.
@@ -1995,11 +3893,11 @@
   @Example
     <code>
     // Set RG9 low (0)
-    IO_RG9_SetLow();
+    SPI_SS_SetLow();
     </code>
 
 */
-#define IO_RG9_SetLow()           (_LATG9 = 0)
+#define SPI_SS_SetLow()           (_LATG9 = 0)
 /**
   @Summary
     Toggles the GPIO pin, RG9, using LATG9.
@@ -2019,11 +3917,11 @@
   @Example
     <code>
     // Toggle RG9
-    IO_RG9_Toggle();
+    SPI_SS_Toggle();
     </code>
 
 */
-#define IO_RG9_Toggle()           (_LATG9 ^= 1)
+#define SPI_SS_Toggle()           (_LATG9 ^= 1)
 /**
   @Summary
     Reads the value of the GPIO pin, RG9.
@@ -2045,11 +3943,11 @@
     uint16_t portValue;
 
     // Read RG9
-    postValue = IO_RG9_GetValue();
+    postValue = SPI_SS_GetValue();
     </code>
 
 */
-#define IO_RG9_GetValue()         _RG9
+#define SPI_SS_GetValue()         _RG9
 /**
   @Summary
     Configures the GPIO pin, RG9, as an input.
@@ -2069,11 +3967,11 @@
   @Example
     <code>
     // Sets the RG9 as an input
-    IO_RG9_SetDigitalInput();
+    SPI_SS_SetDigitalInput();
     </code>
 
 */
-#define IO_RG9_SetDigitalInput()  (_TRISG9 = 1)
+#define SPI_SS_SetDigitalInput()  (_TRISG9 = 1)
 /**
   @Summary
     Configures the GPIO pin, RG9, as an output.
@@ -2093,11 +3991,11 @@
   @Example
     <code>
     // Sets the RG9 as an output
-    IO_RG9_SetDigitalOutput();
+    SPI_SS_SetDigitalOutput();
     </code>
 
 */
-#define IO_RG9_SetDigitalOutput() (_TRISG9 = 0)
+#define SPI_SS_SetDigitalOutput() (_TRISG9 = 0)
 
 /**
     Section: Function Prototypes
@@ -2133,6 +4031,64 @@
 */
 void PIN_MANAGER_Initialize (void);
 
+/**
+  @Summary
+    Callback for IOC Pins.
 
+  @Description
+    This routine is callback for IOC Pins.
+
+  @Param
+    None.
+
+  @Returns
+    None
+ 
+  @Example 
+    <code>
+        CN_SetInterruptHandler(&CN_CallBack);
+    </code>
+*/
+void CN_CallBack(void);
+
+/**
+  @Summary
+    Assigns a function pointer with a callback address.
+
+  @Description
+    This routine assigns a function pointer with a callback address.
+
+  @Param
+    Address of the callback routine.
+
+  @Returns
+    None
+ 
+  @Example 
+    <code>
+        CN_SetInterruptHandler(&CN_CallBack);
+    </code>
+*/
+void CN_SetInterruptHandler(void (* InterruptHandler)(void));
+
+/**
+  @Summary
+    Assigns a function pointer with a callback address.
+
+  @Description
+    This routine assigns a function pointer with a callback address.
+
+  @Param
+    Address of the callback routine.
+
+  @Returns
+    None
+ 
+  @Example 
+    <code>
+        CN_SetIOCInterruptHandler(&CN_CallBack);
+    </code>
+*/
+void __attribute__((deprecated("\nThis will be removed in future MCC releases. \nUse CN_SetInterruptHandler instead."))) CN_SetIOCInterruptHandler(void *handler);
 
 #endif

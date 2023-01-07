@@ -35,6 +35,22 @@ void led_flash(bool on) {
     }
 }
 
+void led_right(bool on) {
+    if (on) {
+        EXT_D0_SetHigh();
+    } else {
+        EXT_D0_SetLow();
+    }
+}
+
+void led_left(bool on) {
+    if (on) {
+        EXT_D1_SetHigh();
+    } else {
+        EXT_D1_SetLow();
+    }
+}
+
 static uint32_t signal_state_ready = 0;
 static uint32_t signal_state_error = 0;
 static uint32_t signal_state_prog = 0;

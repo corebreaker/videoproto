@@ -14,8 +14,8 @@
 extern "C" {
 #endif
 
-void delay_ms(uint16_t);
-void delay_us(uint32_t);
+void delay_ms(uint16_t duration);
+void delay_us(uint32_t duration);
 
 void delay_prog_clk_standard(void);
 void delay_prog_clk_enhanced(void);

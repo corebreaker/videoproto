@@ -13,9 +13,6 @@
 // Endpoint numbers
 #define FLASHER_EP 1
 
-// Config
-#define BUFFER_SIZE 64
-
 // Data structures
 typedef union {
     uint8_t bytes[3];
@@ -37,7 +34,7 @@ typedef struct ep_data {
     void *callbacks;
 
     uint16_t size;
-    uint8_t buffer[BUFFER_SIZE];
+    uint8_t buffer[USBGEN_EP_SIZE];
 } t_ep_data;
 
 // Callbacks

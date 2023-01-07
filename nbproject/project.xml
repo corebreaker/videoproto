@@ -13,7 +13,8 @@
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
-                <sourceRootElem>app</sourceRootElem>
+                <sourceRootElem>screen</sourceRootElem>
+                <sourceRootElem>display</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
