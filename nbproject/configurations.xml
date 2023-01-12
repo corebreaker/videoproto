@@ -21,9 +21,8 @@
         <itemPath>app/leds.h</itemPath>
         <itemPath>app/flasher.h</itemPath>
       </logicalFolder>
-      <logicalFolder name="f2" displayName="Display" projectFiles="true">
-        <itemPath>display/display.h</itemPath>
-        <itemPath>display/io.h</itemPath>
+      <logicalFolder name="f2" displayName="Logger" projectFiles="true">
+        <itemPath>logger/logger.h</itemPath>
       </logicalFolder>
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
@@ -47,7 +46,7 @@
         <itemPath>mcc_generated_files/system.h</itemPath>
         <itemPath>mcc_generated_files/tmr2.h</itemPath>
         <itemPath>mcc_generated_files/tmr3.h</itemPath>
-        <itemPath>mcc_generated_files/spi1.h</itemPath>
+        <itemPath>mcc_generated_files/i2c1.h</itemPath>
       </logicalFolder>
       <itemPath>delay.h</itemPath>
     </logicalFolder>
@@ -73,9 +72,8 @@
         <itemPath>app/leds.c</itemPath>
         <itemPath>app/flasher.c</itemPath>
       </logicalFolder>
-      <logicalFolder name="f2" displayName="Display" projectFiles="true">
-        <itemPath>display/display.c</itemPath>
-        <itemPath>display/io.c</itemPath>
+      <logicalFolder name="f2" displayName="Logger" projectFiles="true">
+        <itemPath>logger/logger.c</itemPath>
       </logicalFolder>
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
@@ -98,7 +96,7 @@
         <itemPath>mcc_generated_files/mcc.c</itemPath>
         <itemPath>mcc_generated_files/tmr2.c</itemPath>
         <itemPath>mcc_generated_files/tmr3.c</itemPath>
-        <itemPath>mcc_generated_files/spi1.c</itemPath>
+        <itemPath>mcc_generated_files/i2c1.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>delay.c</itemPath>
@@ -113,6 +111,7 @@
   <sourceRootList>
     <Elem>screen</Elem>
     <Elem>display</Elem>
+    <Elem>logger</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

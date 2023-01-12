@@ -15,6 +15,7 @@
             <sourceRootList>
                 <sourceRootElem>screen</sourceRootElem>
                 <sourceRootElem>display</sourceRootElem>
+                <sourceRootElem>logger</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

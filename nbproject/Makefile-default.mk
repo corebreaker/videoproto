@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=app/flasher/flasher.c app/programmer/bus.c app/programmer/programmer.c app/app.c app/connect_state.c app/result.c app/app_data.c app/leds.c app/flasher.c display/display.c display/io.c mcc_generated_files/usb/usb_device_generic.c mcc_generated_files/usb/usb_descriptors.c mcc_generated_files/usb/usb_device.c mcc_generated_files/usb/usb_device_events.c mcc_generated_files/usb/usb_hal_16bit.c mcc_generated_files/system.c mcc_generated_files/pin_manager.c mcc_generated_files/interrupt_manager.c mcc_generated_files/traps.c mcc_generated_files/clock.c mcc_generated_files/mcc.c mcc_generated_files/tmr2.c mcc_generated_files/tmr3.c mcc_generated_files/spi1.c main.c delay.c
+SOURCEFILES_QUOTED_IF_SPACED=app/flasher/flasher.c app/programmer/bus.c app/programmer/programmer.c app/app.c app/connect_state.c app/result.c app/app_data.c app/leds.c app/flasher.c mcc_generated_files/usb/usb_device_generic.c mcc_generated_files/usb/usb_descriptors.c mcc_generated_files/usb/usb_device.c mcc_generated_files/usb/usb_device_events.c mcc_generated_files/usb/usb_hal_16bit.c mcc_generated_files/system.c mcc_generated_files/pin_manager.c mcc_generated_files/interrupt_manager.c mcc_generated_files/traps.c mcc_generated_files/clock.c mcc_generated_files/mcc.c mcc_generated_files/tmr2.c mcc_generated_files/tmr3.c main.c delay.c mcc_generated_files/i2c1.c logger/logger.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/app/flasher/flasher.o ${OBJECTDIR}/app/programmer/bus.o ${OBJECTDIR}/app/programmer/programmer.o ${OBJECTDIR}/app/app.o ${OBJECTDIR}/app/connect_state.o ${OBJECTDIR}/app/result.o ${OBJECTDIR}/app/app_data.o ${OBJECTDIR}/app/leds.o ${OBJECTDIR}/app/flasher.o ${OBJECTDIR}/display/display.o ${OBJECTDIR}/display/io.o ${OBJECTDIR}/mcc_generated_files/usb/usb_device_generic.o ${OBJECTDIR}/mcc_generated_files/usb/usb_descriptors.o ${OBJECTDIR}/mcc_generated_files/usb/usb_device.o ${OBJECTDIR}/mcc_generated_files/usb/usb_device_events.o ${OBJECTDIR}/mcc_generated_files/usb/usb_hal_16bit.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/traps.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/tmr2.o ${OBJECTDIR}/mcc_generated_files/tmr3.o ${OBJECTDIR}/mcc_generated_files/spi1.o ${OBJECTDIR}/main.o ${OBJECTDIR}/delay.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/app/flasher/flasher.o.d ${OBJECTDIR}/app/programmer/bus.o.d ${OBJECTDIR}/app/programmer/programmer.o.d ${OBJECTDIR}/app/app.o.d ${OBJECTDIR}/app/connect_state.o.d ${OBJECTDIR}/app/result.o.d ${OBJECTDIR}/app/app_data.o.d ${OBJECTDIR}/app/leds.o.d ${OBJECTDIR}/app/flasher.o.d ${OBJECTDIR}/display/display.o.d ${OBJECTDIR}/display/io.o.d ${OBJECTDIR}/mcc_generated_files/usb/usb_device_generic.o.d ${OBJECTDIR}/mcc_generated_files/usb/usb_descriptors.o.d ${OBJECTDIR}/mcc_generated_files/usb/usb_device.o.d ${OBJECTDIR}/mcc_generated_files/usb/usb_device_events.o.d ${OBJECTDIR}/mcc_generated_files/usb/usb_hal_16bit.o.d ${OBJECTDIR}/mcc_generated_files/system.o.d ${OBJECTDIR}/mcc_generated_files/pin_manager.o.d ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o.d ${OBJECTDIR}/mcc_generated_files/traps.o.d ${OBJECTDIR}/mcc_generated_files/clock.o.d ${OBJECTDIR}/mcc_generated_files/mcc.o.d ${OBJECTDIR}/mcc_generated_files/tmr2.o.d ${OBJECTDIR}/mcc_generated_files/tmr3.o.d ${OBJECTDIR}/mcc_generated_files/spi1.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/delay.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/app/flasher/flasher.o ${OBJECTDIR}/app/programmer/bus.o ${OBJECTDIR}/app/programmer/programmer.o ${OBJECTDIR}/app/app.o ${OBJECTDIR}/app/connect_state.o ${OBJECTDIR}/app/result.o ${OBJECTDIR}/app/app_data.o ${OBJECTDIR}/app/leds.o ${OBJECTDIR}/app/flasher.o ${OBJECTDIR}/mcc_generated_files/usb/usb_device_generic.o ${OBJECTDIR}/mcc_generated_files/usb/usb_descriptors.o ${OBJECTDIR}/mcc_generated_files/usb/usb_device.o ${OBJECTDIR}/mcc_generated_files/usb/usb_device_events.o ${OBJECTDIR}/mcc_generated_files/usb/usb_hal_16bit.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/traps.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/tmr2.o ${OBJECTDIR}/mcc_generated_files/tmr3.o ${OBJECTDIR}/main.o ${OBJECTDIR}/delay.o ${OBJECTDIR}/mcc_generated_files/i2c1.o ${OBJECTDIR}/logger/logger.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/app/flasher/flasher.o.d ${OBJECTDIR}/app/programmer/bus.o.d ${OBJECTDIR}/app/programmer/programmer.o.d ${OBJECTDIR}/app/app.o.d ${OBJECTDIR}/app/connect_state.o.d ${OBJECTDIR}/app/result.o.d ${OBJECTDIR}/app/app_data.o.d ${OBJECTDIR}/app/leds.o.d ${OBJECTDIR}/app/flasher.o.d ${OBJECTDIR}/mcc_generated_files/usb/usb_device_generic.o.d ${OBJECTDIR}/mcc_generated_files/usb/usb_descriptors.o.d ${OBJECTDIR}/mcc_generated_files/usb/usb_device.o.d ${OBJECTDIR}/mcc_generated_files/usb/usb_device_events.o.d ${OBJECTDIR}/mcc_generated_files/usb/usb_hal_16bit.o.d ${OBJECTDIR}/mcc_generated_files/system.o.d ${OBJECTDIR}/mcc_generated_files/pin_manager.o.d ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o.d ${OBJECTDIR}/mcc_generated_files/traps.o.d ${OBJECTDIR}/mcc_generated_files/clock.o.d ${OBJECTDIR}/mcc_generated_files/mcc.o.d ${OBJECTDIR}/mcc_generated_files/tmr2.o.d ${OBJECTDIR}/mcc_generated_files/tmr3.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/delay.o.d ${OBJECTDIR}/mcc_generated_files/i2c1.o.d ${OBJECTDIR}/logger/logger.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/app/flasher/flasher.o ${OBJECTDIR}/app/programmer/bus.o ${OBJECTDIR}/app/programmer/programmer.o ${OBJECTDIR}/app/app.o ${OBJECTDIR}/app/connect_state.o ${OBJECTDIR}/app/result.o ${OBJECTDIR}/app/app_data.o ${OBJECTDIR}/app/leds.o ${OBJECTDIR}/app/flasher.o ${OBJECTDIR}/display/display.o ${OBJECTDIR}/display/io.o ${OBJECTDIR}/mcc_generated_files/usb/usb_device_generic.o ${OBJECTDIR}/mcc_generated_files/usb/usb_descriptors.o ${OBJECTDIR}/mcc_generated_files/usb/usb_device.o ${OBJECTDIR}/mcc_generated_files/usb/usb_device_events.o ${OBJECTDIR}/mcc_generated_files/usb/usb_hal_16bit.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/traps.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/tmr2.o ${OBJECTDIR}/mcc_generated_files/tmr3.o ${OBJECTDIR}/mcc_generated_files/spi1.o ${OBJECTDIR}/main.o ${OBJECTDIR}/delay.o
+OBJECTFILES=${OBJECTDIR}/app/flasher/flasher.o ${OBJECTDIR}/app/programmer/bus.o ${OBJECTDIR}/app/programmer/programmer.o ${OBJECTDIR}/app/app.o ${OBJECTDIR}/app/connect_state.o ${OBJECTDIR}/app/result.o ${OBJECTDIR}/app/app_data.o ${OBJECTDIR}/app/leds.o ${OBJECTDIR}/app/flasher.o ${OBJECTDIR}/mcc_generated_files/usb/usb_device_generic.o ${OBJECTDIR}/mcc_generated_files/usb/usb_descriptors.o ${OBJECTDIR}/mcc_generated_files/usb/usb_device.o ${OBJECTDIR}/mcc_generated_files/usb/usb_device_events.o ${OBJECTDIR}/mcc_generated_files/usb/usb_hal_16bit.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/traps.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/tmr2.o ${OBJECTDIR}/mcc_generated_files/tmr3.o ${OBJECTDIR}/main.o ${OBJECTDIR}/delay.o ${OBJECTDIR}/mcc_generated_files/i2c1.o ${OBJECTDIR}/logger/logger.o
 
 # Source Files
-SOURCEFILES=app/flasher/flasher.c app/programmer/bus.c app/programmer/programmer.c app/app.c app/connect_state.c app/result.c app/app_data.c app/leds.c app/flasher.c display/display.c display/io.c mcc_generated_files/usb/usb_device_generic.c mcc_generated_files/usb/usb_descriptors.c mcc_generated_files/usb/usb_device.c mcc_generated_files/usb/usb_device_events.c mcc_generated_files/usb/usb_hal_16bit.c mcc_generated_files/system.c mcc_generated_files/pin_manager.c mcc_generated_files/interrupt_manager.c mcc_generated_files/traps.c mcc_generated_files/clock.c mcc_generated_files/mcc.c mcc_generated_files/tmr2.c mcc_generated_files/tmr3.c mcc_generated_files/spi1.c main.c delay.c
+SOURCEFILES=app/flasher/flasher.c app/programmer/bus.c app/programmer/programmer.c app/app.c app/connect_state.c app/result.c app/app_data.c app/leds.c app/flasher.c mcc_generated_files/usb/usb_device_generic.c mcc_generated_files/usb/usb_descriptors.c mcc_generated_files/usb/usb_device.c mcc_generated_files/usb/usb_device_events.c mcc_generated_files/usb/usb_hal_16bit.c mcc_generated_files/system.c mcc_generated_files/pin_manager.c mcc_generated_files/interrupt_manager.c mcc_generated_files/traps.c mcc_generated_files/clock.c mcc_generated_files/mcc.c mcc_generated_files/tmr2.c mcc_generated_files/tmr3.c main.c delay.c mcc_generated_files/i2c1.c logger/logger.c
 
 
 
@@ -149,18 +149,6 @@ ${OBJECTDIR}/app/flasher.o: app/flasher.c  .generated_files/flags/default/d83416
 	@${RM} ${OBJECTDIR}/app/flasher.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  app/flasher.c  -o ${OBJECTDIR}/app/flasher.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/app/flasher.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O2 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/display/display.o: display/display.c  .generated_files/flags/default/47b2a8c4fbd86bf0d3ac2752f9755c0eb3ea5d54 .generated_files/flags/default/b3f7377e0834b0af39411d4b05ef64f524878e8b
-	@${MKDIR} "${OBJECTDIR}/display" 
-	@${RM} ${OBJECTDIR}/display/display.o.d 
-	@${RM} ${OBJECTDIR}/display/display.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  display/display.c  -o ${OBJECTDIR}/display/display.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/display/display.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O2 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
-${OBJECTDIR}/display/io.o: display/io.c  .generated_files/flags/default/6f4363c62cf8ca5c7faf35f43cc5d5f1811214c8 .generated_files/flags/default/b3f7377e0834b0af39411d4b05ef64f524878e8b
-	@${MKDIR} "${OBJECTDIR}/display" 
-	@${RM} ${OBJECTDIR}/display/io.o.d 
-	@${RM} ${OBJECTDIR}/display/io.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  display/io.c  -o ${OBJECTDIR}/display/io.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/display/io.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O2 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
 ${OBJECTDIR}/mcc_generated_files/usb/usb_device_generic.o: mcc_generated_files/usb/usb_device_generic.c  .generated_files/flags/default/53069c15684f21809633320e3e36c1b015d5eff3 .generated_files/flags/default/b3f7377e0834b0af39411d4b05ef64f524878e8b
 	@${MKDIR} "${OBJECTDIR}/mcc_generated_files/usb" 
 	@${RM} ${OBJECTDIR}/mcc_generated_files/usb/usb_device_generic.o.d 
@@ -239,12 +227,6 @@ ${OBJECTDIR}/mcc_generated_files/tmr3.o: mcc_generated_files/tmr3.c  .generated_
 	@${RM} ${OBJECTDIR}/mcc_generated_files/tmr3.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  mcc_generated_files/tmr3.c  -o ${OBJECTDIR}/mcc_generated_files/tmr3.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/mcc_generated_files/tmr3.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O2 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/mcc_generated_files/spi1.o: mcc_generated_files/spi1.c  .generated_files/flags/default/d9c19f19a29b00486ec532f2af70df8d42140527 .generated_files/flags/default/b3f7377e0834b0af39411d4b05ef64f524878e8b
-	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
-	@${RM} ${OBJECTDIR}/mcc_generated_files/spi1.o.d 
-	@${RM} ${OBJECTDIR}/mcc_generated_files/spi1.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  mcc_generated_files/spi1.c  -o ${OBJECTDIR}/mcc_generated_files/spi1.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/mcc_generated_files/spi1.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O2 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
 ${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/d9d6452ab906d1b0bc7c7640d66072fa27d70a8c .generated_files/flags/default/b3f7377e0834b0af39411d4b05ef64f524878e8b
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/main.o.d 
@@ -256,6 +238,18 @@ ${OBJECTDIR}/delay.o: delay.c  .generated_files/flags/default/5c50f5f18d039b5f65
 	@${RM} ${OBJECTDIR}/delay.o.d 
 	@${RM} ${OBJECTDIR}/delay.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  delay.c  -o ${OBJECTDIR}/delay.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/delay.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O2 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/mcc_generated_files/i2c1.o: mcc_generated_files/i2c1.c  .generated_files/flags/default/39d028080d58198768daf1f48893f4922ebaa80a .generated_files/flags/default/b3f7377e0834b0af39411d4b05ef64f524878e8b
+	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/i2c1.o.d 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/i2c1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  mcc_generated_files/i2c1.c  -o ${OBJECTDIR}/mcc_generated_files/i2c1.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/mcc_generated_files/i2c1.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O2 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/logger/logger.o: logger/logger.c  .generated_files/flags/default/85f1a0198b9a32ee39b39008c9a2eee8af15cacf .generated_files/flags/default/b3f7377e0834b0af39411d4b05ef64f524878e8b
+	@${MKDIR} "${OBJECTDIR}/logger" 
+	@${RM} ${OBJECTDIR}/logger/logger.o.d 
+	@${RM} ${OBJECTDIR}/logger/logger.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  logger/logger.c  -o ${OBJECTDIR}/logger/logger.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/logger/logger.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O2 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 else
 ${OBJECTDIR}/app/flasher/flasher.o: app/flasher/flasher.c  .generated_files/flags/default/5d69f2822d5218af27dae3640023b9313b53959f .generated_files/flags/default/b3f7377e0834b0af39411d4b05ef64f524878e8b
@@ -311,18 +305,6 @@ ${OBJECTDIR}/app/flasher.o: app/flasher.c  .generated_files/flags/default/6a487f
 	@${RM} ${OBJECTDIR}/app/flasher.o.d 
 	@${RM} ${OBJECTDIR}/app/flasher.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  app/flasher.c  -o ${OBJECTDIR}/app/flasher.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/app/flasher.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O2 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
-${OBJECTDIR}/display/display.o: display/display.c  .generated_files/flags/default/ab79c37976196002f860cf8f458d27ddc29e8c5b .generated_files/flags/default/b3f7377e0834b0af39411d4b05ef64f524878e8b
-	@${MKDIR} "${OBJECTDIR}/display" 
-	@${RM} ${OBJECTDIR}/display/display.o.d 
-	@${RM} ${OBJECTDIR}/display/display.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  display/display.c  -o ${OBJECTDIR}/display/display.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/display/display.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O2 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
-${OBJECTDIR}/display/io.o: display/io.c  .generated_files/flags/default/7499f13b3a4f1ce9fb146a181c72cb9e2ef1fed7 .generated_files/flags/default/b3f7377e0834b0af39411d4b05ef64f524878e8b
-	@${MKDIR} "${OBJECTDIR}/display" 
-	@${RM} ${OBJECTDIR}/display/io.o.d 
-	@${RM} ${OBJECTDIR}/display/io.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  display/io.c  -o ${OBJECTDIR}/display/io.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/display/io.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O2 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 ${OBJECTDIR}/mcc_generated_files/usb/usb_device_generic.o: mcc_generated_files/usb/usb_device_generic.c  .generated_files/flags/default/9a215eed2dbd09967e591d3bcbcca5ec8cb00100 .generated_files/flags/default/b3f7377e0834b0af39411d4b05ef64f524878e8b
 	@${MKDIR} "${OBJECTDIR}/mcc_generated_files/usb" 
@@ -402,12 +384,6 @@ ${OBJECTDIR}/mcc_generated_files/tmr3.o: mcc_generated_files/tmr3.c  .generated_
 	@${RM} ${OBJECTDIR}/mcc_generated_files/tmr3.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  mcc_generated_files/tmr3.c  -o ${OBJECTDIR}/mcc_generated_files/tmr3.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/mcc_generated_files/tmr3.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O2 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/mcc_generated_files/spi1.o: mcc_generated_files/spi1.c  .generated_files/flags/default/1ce64281157ecc86d16305576cf0ed097f317163 .generated_files/flags/default/b3f7377e0834b0af39411d4b05ef64f524878e8b
-	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
-	@${RM} ${OBJECTDIR}/mcc_generated_files/spi1.o.d 
-	@${RM} ${OBJECTDIR}/mcc_generated_files/spi1.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  mcc_generated_files/spi1.c  -o ${OBJECTDIR}/mcc_generated_files/spi1.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/mcc_generated_files/spi1.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O2 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
-	
 ${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/7f2ddff91f740dd5c14cabd37142c5f737fff4b1 .generated_files/flags/default/b3f7377e0834b0af39411d4b05ef64f524878e8b
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/main.o.d 
@@ -419,6 +395,18 @@ ${OBJECTDIR}/delay.o: delay.c  .generated_files/flags/default/7637d428e4d43d65f6
 	@${RM} ${OBJECTDIR}/delay.o.d 
 	@${RM} ${OBJECTDIR}/delay.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  delay.c  -o ${OBJECTDIR}/delay.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/delay.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O2 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/mcc_generated_files/i2c1.o: mcc_generated_files/i2c1.c  .generated_files/flags/default/214c6d2f015660e08434016356418f6952b30448 .generated_files/flags/default/b3f7377e0834b0af39411d4b05ef64f524878e8b
+	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/i2c1.o.d 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/i2c1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  mcc_generated_files/i2c1.c  -o ${OBJECTDIR}/mcc_generated_files/i2c1.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/mcc_generated_files/i2c1.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O2 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/logger/logger.o: logger/logger.c  .generated_files/flags/default/fdf2744133cc8a714b80fb1d9a492b57afdf327d .generated_files/flags/default/b3f7377e0834b0af39411d4b05ef64f524878e8b
+	@${MKDIR} "${OBJECTDIR}/logger" 
+	@${RM} ${OBJECTDIR}/logger/logger.o.d 
+	@${RM} ${OBJECTDIR}/logger/logger.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  logger/logger.c  -o ${OBJECTDIR}/logger/logger.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/logger/logger.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O2 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 endif
 
