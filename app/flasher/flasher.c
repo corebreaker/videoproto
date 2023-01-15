@@ -301,35 +301,33 @@ static uint16_t bufpos = 0;
 static uint16_t bufsz = 0;
 
 static bool flasher_cmd_send_message(t_ep_data *data) {
-    data->size = bufsz - bufpos;
-    if (data->size > USBGEN_EP_SIZE)
-        data->size = USBGEN_EP_SIZE;
+    uint16_t sz = bufsz - bufpos;
 
-    memmove(&data->buffer[0], &buffer[bufpos], data->size);
-    bufpos += data->size;
+    if (sz > (USBGEN_EP_SIZE - 2))
+        sz = USBGEN_EP_SIZE - 2;
+
+    data->buffer[0] = 0;
+    data->buffer[1] = (uint8_t)sz;
+    memmove(&data->buffer[2], &buffer[bufpos], sz);
+    data->size = sz + 2;
+
+    bufpos += sz;
     
-    return bufpos < bufsz;
+    return bufpos >= bufsz;
 }
 
 static bool flasher_cmd_inspect(t_ep_data *data) {
     uint16_t size = strlen(msg);
 
-    bufpos = 2;
+    bufpos = 0;
     bufsz = size + 2;
-    strcpy(&buffer[2], msg);
-    memmove(buffer, &size, 2);
+    memmove(&buffer[0], &size, 2);
+    memmove(&buffer[2], &msg[0], size);
 
     data->cmd = 6;
+    data->state = 1;
 
-    flasher_cmd_send_message(data);
-    if (bufpos < bufsz)
-        data->state = 1;
-    
-    data->size = 9;
-    memmove(&data->buffer[0], "\x07\x00Hello !", 9);
-    data->state = 0;
-
-    return true;
+    return flasher_cmd_send_message(data);
 }
 
 

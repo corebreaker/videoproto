@@ -52,13 +52,6 @@
 #include <stddef.h>
 #include <xc.h>
 
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-    extern "C" {
-
-#endif
-
-
 /**
   I2C Slave Driver Status
 
@@ -91,6 +84,7 @@ typedef enum
        buffer by setting the location of the receive buffer using the: I2C1_WritePointerSet()
      */
     I2C1_SLAVE_RECEIVE_REQUEST_DETECTED,
+    I2C1_SLAVE_RECEIVE_REQUEST_DONE,
 
     /* This state indicates that the slave driver has received data from the master.
        Application can use this status to process the received data set up the receive
@@ -115,7 +109,18 @@ typedef enum
 
 } I2C1_SLAVE_DRIVER_STATUS;
 
-#define I2C1_SLAVE_DEFAULT_ADDRESS          99
+#define I2C1_SLAVE_DEFAULT_ADDRESS          64
+
+typedef bool (*t_i2c_status_handler)(I2C1_SLAVE_DRIVER_STATUS);
+typedef void (*t_i2c_io_handler)(void);
+
+
+#ifdef __cplusplus  // Provide C++ Compatibility
+
+    extern "C" {
+
+#endif
+
 
 /**
     @Summary
@@ -182,8 +187,7 @@ void I2C1_Initialize(void);
 
 */
 
-void I2C1_SlaveAddressMaskSet(
-                                uint16_t mask);
+void I2C1_SlaveAddressMaskSet(uint16_t mask);
 
 /**
     @Summary
@@ -225,8 +229,7 @@ void I2C1_SlaveAddressMaskSet(
 
 */
 
-void I2C1_SlaveAddressSet(
-                                uint16_t address);
+void I2C1_SlaveAddressSet(uint16_t address);
 
 
 /**
@@ -478,8 +481,13 @@ uint8_t *I2C1_WritePointerGet(void);
 
  */
 
-#pragma message "I2C1_StatusCallback() is an Application implemented function. If this function is already implemented, you can turn off this message by deleting or commenting out this message."
-bool I2C1_StatusCallback(I2C1_SLAVE_DRIVER_STATUS status);
+void I2C1_SetStatusHandler(t_i2c_status_handler handler);
+
+void I2C_SlaveSetReadIntHandler(t_i2c_io_handler reader);
+void I2C_SlaveSetWriteIntHandler(t_i2c_io_handler writer);
+
+void I2C_Write(uint8_t v);
+uint8_t I2C_Read(void);
 
 #ifdef __cplusplus  // Provide C++ Compatibility
 

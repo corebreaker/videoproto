@@ -55,9 +55,30 @@
 #include "./app/leds.h"
 #include "./app/app.h"
 
+#include "./logger/logger.h"
+#include "./mcc_generated_files/pin_manager.h"
+#include "./app/leds.h"
+
 // USB connection monitoring
 static void usb_connection(bool connected) {
     led_ready(connected);
+}
+
+static bool pushed = false;
+static void handler() {
+    if (EXT_APPLY_GetValue()) {
+        pushed = true;
+        return;
+    }
+
+    if (pushed) {
+        logger_send_event(2);
+        pushed = false;
+    }
+}
+
+static void app_log(void) {
+    led_signal_activate(LED_SIGNAL_PROG, 0);
 }
 
 /*
@@ -70,10 +91,13 @@ int main(void) {
 
     led_error(true);
 
+    CN_SetInterruptHandler(handler);
     TMR2_SetInterruptHandler(connection_signal_timer);
     TMR3_SetInterruptHandler(led_signal_event);
     set_connecion_state_handler(usb_connection);
+    logger_on_push_button(app_log);
 
+    logger_init();
     init_app();
 
     delay_ms(200);
