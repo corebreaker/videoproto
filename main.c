@@ -59,6 +59,8 @@
 #include "./mcc_generated_files/pin_manager.h"
 #include "./app/leds.h"
 
+#include "./mcc_generated_files/i2c1_driver.h"
+
 // USB connection monitoring
 static void usb_connection(bool connected) {
     led_ready(connected);
@@ -81,12 +83,69 @@ static void app_log(void) {
     led_signal_activate(LED_SIGNAL_PROG, 0);
 }
 
+static void dummy(void) {}
+
+static bool eotFlag = false;
+
+static bool waitForAck(void) {
+    for (int i = 0; i < 1000000; i++) {
+        if (eotFlag) {
+            eotFlag = false;
+            led_signal_activate(LED_SIGNAL_FLASH, 0);
+
+            return true;
+        }
+    }
+    
+    return false;
+}
+
+static void intHandler(void) {
+    if (!i2c1_driver_isBuferFull()) {
+        eotFlag = true;
+    }
+
+    i2c1_clearIRQ();
+}
+
+static void sendCode(uint8_t *d, uint8_t sz) {
+    i2c1_driver_start();
+
+    i2c1_driver_TXData(0x40);
+    i2c1_waitForEvent(NULL);
+    led_signal_activate(LED_SIGNAL_PROG, 0);
+    /*if (!waitForAck()) {
+        led_signal_activate(LED_SIGNAL_ERROR, 0);
+        return;
+    }*/
+    
+    for (uint8_t i = 0; i < sz; i++) {
+        i2c1_driver_TXData(d[1]);
+        i2c1_waitForEvent(NULL);
+        /*if (!waitForAck()) {
+            led_signal_activate(LED_SIGNAL_ERROR, 0);
+            return;
+        }*/
+    }
+    
+    i2c1_driver_sendACK();
+    i2c1_driver_stop();
+
+    led_signal_activate(LED_SIGNAL_READY, 0);
+}
+
 /*
    Main application
  */
 int main(void) {
     // initialize the device
     SYSTEM_Initialize();
+
+    i2c1_driver_setMasterI2cISR(intHandler);
+    i2c1_driver_setSlaveI2cISR(dummy);
+    i2c1_driver_driver_open();
+    i2c1_enableIRQ();
+
     INTERRUPT_GlobalEnable();
 
     led_error(true);
@@ -102,6 +161,10 @@ int main(void) {
 
     delay_ms(200);
     led_error(false);
+    delay_ms(500);
+
+    uint8_t cmd[] = { 4, 6 };
+    sendCode(cmd, sizeof(cmd));
 
     while (1) {
         app_loop();

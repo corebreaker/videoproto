@@ -1,6 +1,6 @@
 #include <string.h>
 #include <stdbool.h>
-#include "../mcc_generated_files/i2c1.h"
+#include "../mcc_generated_files/i2c1_driver.h"
 #include "./logger.h"
 #include "../app/leds.h"
 
@@ -20,7 +20,7 @@ static void writer() {
     switch (g_state) {
         // Message Len
         case 1:
-            I2C_Write(g_size);
+            //I2C_Write(g_size);
             g_index = 0;
             g_state = 0;
             break;
@@ -28,7 +28,7 @@ static void writer() {
         // Message Content
         case 2:
             if (g_index < g_size) {
-                I2C_Write(g_buffer[g_index++]);
+                //I2C_Write(g_buffer[g_index++]);
             } else {
                 g_size = 0;
                 g_state = 0;
@@ -39,7 +39,7 @@ static void writer() {
         // Event
         case 3:
             if (g_event) {
-                I2C_Write(g_event);
+                //I2C_Write(g_event);
                 g_event = 0;
                 led_signal_activate(LED_SIGNAL_READY, 0);
             }
@@ -49,7 +49,7 @@ static void writer() {
 
         // Led Status
         case 4:
-            I2C_Write(g_led_status);
+            //I2C_Write(g_led_status);
 
             g_led_status = 0;
             g_state = 0;
@@ -58,7 +58,7 @@ static void writer() {
 }
 
 static void reader() {
-    switch (I2C_Read()) {
+    switch (0 /*I2C_Read()*/) {
         case 1:
             led_signal_activate(LED_SIGNAL_ERROR, 0);
             g_state = 1;
@@ -91,8 +91,8 @@ static void reader() {
 }
 
 void logger_init() {
-    I2C_SlaveSetReadIntHandler(reader);
-    I2C_SlaveSetWriteIntHandler(writer);
+    //I2C_SlaveSetReadIntHandler(reader);
+    //I2C_SlaveSetWriteIntHandler(writer);
 }
 
 void logger_send_line(const char *content, uint8_t sz) {
@@ -112,7 +112,7 @@ void logger_send_event(uint8_t event_id) {
     if (g_event)
         return;
 
-    led_signal_activate(LED_SIGNAL_FLASH, 0);
+    //led_signal_activate(LED_SIGNAL_FLASH, 0);
     g_event = event_id;
 }
 
@@ -126,4 +126,3 @@ void logger_send_led_status(uint8_t led, uint8_t status) {
 void logger_on_push_button(t_button_handler handler) {
     g_handler = handler;
 }
-

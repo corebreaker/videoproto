@@ -55,15 +55,12 @@ void INTERRUPT_Initialize (void)
     //    USBI: USB1 - USB1 Interrupt
     //    Priority: 1
         IPC21bits.USB1IP = 1;
-    //    CNI: CN -  Change Notification Interrupt
-    //    Priority: 1
-        IPC4bits.CNIP = 1;
     //    MICI: MI2C1 - I2C1 Master Events
     //    Priority: 1
         IPC4bits.MI2C1IP = 1;
-    //    SICI: SI2C1 - I2C1 Slave Events
+    //    CNI: CN -  Change Notification Interrupt
     //    Priority: 1
-        IPC4bits.SI2C1IP = 1;
+        IPC4bits.CNIP = 1;
     //    TI: T3 - Timer3
     //    Priority: 1
         IPC2bits.T3IP = 1;
