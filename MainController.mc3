@@ -7,7 +7,7 @@
       </entry>
       <entry>
          <string>I2C1</string>
-         <string>class com.microchip.mcc.foundationservices.mcu16.modules.peripheraldriver.i2c.I2C</string>
+         <string>class com.microchip.mcc.mcu16.modules.i2c.I2C</string>
       </entry>
       <entry>
          <string>ICD</string>
@@ -63,9 +63,8 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.USBDEVICELite.USBDEVICELite" version="1.27.0"/>
       <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.mcu16.Mcu16PeripheralLibrary" version="1.171.1"/>
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.foundationservices.library.FoundationServicesLibrary" version="0.2.3"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.USBDEVICELite.USBDEVICELite" version="1.27.0"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -497,6 +496,10 @@
          <value>255</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="I2C1" registerAlias="MICI" settingAlias="context"/>
+         <value>OFF</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="I2C1" registerAlias="MICI" settingAlias="enable"/>
          <value>enabled</value>
       </entry>
@@ -509,8 +512,12 @@
          <value>1</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="I2C1" registerAlias="SICI" settingAlias="context"/>
+         <value>OFF</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="I2C1" registerAlias="SICI" settingAlias="enable"/>
-         <value>disabled</value>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="I2C1" registerAlias="SICI" settingAlias="flag"/>
@@ -11739,6 +11746,10 @@
          <hash>a54fc7d8f9bb1e71db712223113173a687851fd38c05a2cc878c2aed5f1fa9ac</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files\i2c1.c</file>
+         <hash>ab70809143c1c788a8e141bf82b2ca1f03b07913614b813d085fc1aba49b7e5b</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files\usb\usb_device_config.h</file>
          <hash>29b15caac099a4e0678746f50eb4370f62bfec2368d3f532786aff153d888c06</hash>
       </entry>
@@ -11747,16 +11758,16 @@
          <hash>cc51734d68814a21576b18738f52455b1827bcdd1026e63b11a846380fa577cc</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files\i2c1.h</file>
+         <hash>4d4471ce34924a0a6e68f5a62c50ea4406e7c24f7042b29e104103c04e933fcf</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files\system.h</file>
          <hash>0e9b3012de08035b64aa4a0914364814e75ce62d9af2c2ac2d50e179663ae2d7</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\i2c1_driver.h</file>
-         <hash>69f5c9d1be24f03cc00b9829895ab48a45de9549fba2ac1777eae0f919ea7b75</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\system.c</file>
-         <hash>a03c191879dc7a2448a6958224091bd9d2bc143acc16244e6d3b7a1231d73249</hash>
+         <hash>e07d4b70d566d4e8b2ea28ef3cd1ab7741e70b6b7bde0c35ecd6ebd187472d3a</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\clock.h</file>
@@ -11776,7 +11787,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\mcc.h</file>
-         <hash>38edb46eac6e1c939f8fc123ba92d3a9912b3adf5225bc9e4de103840daed217</hash>
+         <hash>e49111c840ff7b133c2f88bcb249361b38f1527b82ffe1fce6dec8be1ce3f3d6</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\usb\usb.h</file>
@@ -11803,10 +11814,6 @@
          <hash>7d851b24fc975135d23cd5aeb5b9a2d2022655ed11c76e842462593a5ec4c368</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\pin_manager.h</file>
-         <hash>ee4e4b9e75dc359a991ec8d476f9bb5449db09fe476f1b7f91551878620f32c5</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\usb\usb_device.h</file>
          <hash>d52cca783292c65509a0a32dcee70eb352e4684078896bb9cb790123ba9cff1b</hash>
       </entry>
@@ -11817,6 +11824,10 @@
       <entry>
          <file>mcc_generated_files\usb\usb_device_events.c</file>
          <hash>f88885a57728444faa44fb05f84d968d014bda5121211f2692029ab2ce3410a2</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\pin_manager.h</file>
+         <hash>ee4e4b9e75dc359a991ec8d476f9bb5449db09fe476f1b7f91551878620f32c5</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\tmr2.c</file>
@@ -11831,16 +11842,12 @@
          <hash>063dbfc17e0c169931d499f6c1e1cb6515cbe460245b21c7948e18ac1708a3e1</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\i2c1_driver.c</file>
-         <hash>80ddfa0f89019a0103d34221e5092302339a7433c22c5c9b05d2e55eacc8309a</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\pin_manager.c</file>
          <hash>0d9d68f81db9e27e7e13ac19b39f64148f5f7a8e5a3f70c309788e4a70ae883b</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\usb\utilities\mchpwinusb_template.inf</file>
-         <hash>9d6127758d108d6c1067d351ce3551bac90742c07b1785e8b78a8b1616f964dd</hash>
+         <hash>1877c31dc1b3d7dacb882dd467807ab4adfc4887879705b8a358b0ae4df6acd5</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\usb\usb_hal_16bit.c</file>
@@ -11851,16 +11858,16 @@
          <hash>1f3fdf3b0df5bcd1c8156f02cc5be582abb129a39fee8f38f3b6042a7d46b2fb</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\usb\usb_device_generic.c</file>
-         <hash>bc5c97aed883b483132affd85810a0ed5bca7eff4257fd6c2450d3bf95833a9c</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\traps.h</file>
          <hash>7cbb07af0e018b56d3cedc1b8426db335754e4e943cce1d81aeec74e698436d2</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files\usb\usb_device_generic.c</file>
+         <hash>bc5c97aed883b483132affd85810a0ed5bca7eff4257fd6c2450d3bf95833a9c</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files\interrupt_manager.c</file>
-         <hash>ad4663cc4ff5c7bfc37f0ea0136bb4b95f60dd41a7f862be652d19330e5f08af</hash>
+         <hash>dedfe589aee8ddf6f22607b69e2c4ba3dddb0c608319aa383e51aa8b7066982f</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\usb\usb_common.h</file>

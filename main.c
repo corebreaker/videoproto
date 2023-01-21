@@ -59,7 +59,7 @@
 #include "./mcc_generated_files/pin_manager.h"
 #include "./app/leds.h"
 
-#include "./mcc_generated_files/i2c1_driver.h"
+#include "./mcc_generated_files/i2c1.h"
 
 // USB connection monitoring
 static void usb_connection(bool connected) {
@@ -83,15 +83,7 @@ static void app_log(void) {
     led_signal_activate(LED_SIGNAL_PROG, 0);
 }
 
-static void dummy(void) {}
-
-static void sendCode(uint8_t *d, uint8_t sz) {
-    // send the start condition
-    i2c1_driver_start(); // send the start condition
-    i2c1_driver_TXData(0x40); // send the slave address with the write bit
-    i2c1_driver_TXData(0x04); // send the first byte (0x04)
-    i2c1_driver_TXData(0x06); // send the second byte (0x06)
-    i2c1_driver_stop(); // send the stop condition
+static void sendCode() {
 }
 
 /*
@@ -100,12 +92,6 @@ static void sendCode(uint8_t *d, uint8_t sz) {
 int main(void) {
     // initialize the device
     SYSTEM_Initialize();
-
-    i2c1_driver_setMasterI2cISR(dummy);
-    i2c1_driver_setSlaveI2cISR(dummy);
-    i2c1_driver_driver_open();
-    i2c1_enableIRQ();
-
     INTERRUPT_GlobalEnable();
 
     led_error(true);
@@ -123,8 +109,7 @@ int main(void) {
     led_error(false);
     delay_ms(500);
 
-    uint8_t cmd[] = { 4, 6 };
-    sendCode(cmd, sizeof(cmd));
+    sendCode();
 
     while (1) {
         app_loop();

@@ -75,10 +75,10 @@
 #include "pin_manager.h"
 #include "clock.h"
 #include "system.h"
-#include "i2c1_driver.h"
+#include "usb/usb.h"
+#include "i2c1.h"
 #include "interrupt_manager.h"
 #include "traps.h"
-#include "usb/usb.h"
 #include "tmr3.h"
 #include "tmr2.h"
 
@@ -89,6 +89,7 @@ void SYSTEM_Initialize(void)
     INTERRUPT_Initialize();
     USBDeviceInit();
     USBDeviceAttach();
+    I2C1_Initialize();
     TMR3_Initialize();
     TMR2_Initialize();
 }

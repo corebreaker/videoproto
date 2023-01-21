@@ -51,10 +51,10 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#include "i2c1_driver.h"
+#include "usb/usb.h"
+#include "i2c1.h"
 #include "interrupt_manager.h"
 #include "traps.h"
-#include "usb/usb.h"
 #include "tmr3.h"
 #include "tmr2.h"
 
