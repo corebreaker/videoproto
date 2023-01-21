@@ -85,53 +85,13 @@ static void app_log(void) {
 
 static void dummy(void) {}
 
-static bool eotFlag = false;
-
-static bool waitForAck(void) {
-    for (int i = 0; i < 1000000; i++) {
-        if (eotFlag) {
-            eotFlag = false;
-            led_signal_activate(LED_SIGNAL_FLASH, 0);
-
-            return true;
-        }
-    }
-    
-    return false;
-}
-
-static void intHandler(void) {
-    if (!i2c1_driver_isBuferFull()) {
-        eotFlag = true;
-    }
-
-    i2c1_clearIRQ();
-}
-
 static void sendCode(uint8_t *d, uint8_t sz) {
-    i2c1_driver_start();
-
-    i2c1_driver_TXData(0x40);
-    i2c1_waitForEvent(NULL);
-    led_signal_activate(LED_SIGNAL_PROG, 0);
-    /*if (!waitForAck()) {
-        led_signal_activate(LED_SIGNAL_ERROR, 0);
-        return;
-    }*/
-    
-    for (uint8_t i = 0; i < sz; i++) {
-        i2c1_driver_TXData(d[1]);
-        i2c1_waitForEvent(NULL);
-        /*if (!waitForAck()) {
-            led_signal_activate(LED_SIGNAL_ERROR, 0);
-            return;
-        }*/
-    }
-    
-    i2c1_driver_sendACK();
-    i2c1_driver_stop();
-
-    led_signal_activate(LED_SIGNAL_READY, 0);
+    // send the start condition
+    i2c1_driver_start(); // send the start condition
+    i2c1_driver_TXData(0x40); // send the slave address with the write bit
+    i2c1_driver_TXData(0x04); // send the first byte (0x04)
+    i2c1_driver_TXData(0x06); // send the second byte (0x06)
+    i2c1_driver_stop(); // send the stop condition
 }
 
 /*
@@ -141,7 +101,7 @@ int main(void) {
     // initialize the device
     SYSTEM_Initialize();
 
-    i2c1_driver_setMasterI2cISR(intHandler);
+    i2c1_driver_setMasterI2cISR(dummy);
     i2c1_driver_setSlaveI2cISR(dummy);
     i2c1_driver_driver_open();
     i2c1_enableIRQ();
